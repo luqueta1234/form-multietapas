@@ -1,12 +1,12 @@
 {{>partials/header}}
 
-<h2>Etapa 3: Resumo</h2>
-<div id="resumo">
-  <!-- O conteúdo será injetado dinamicamente pelo JavaScript -->
-</div>
+  <div class="form-container">
+        <h2>Etapa 3: Resumo</h2>
+        <div id="resumo"></div>
+        <button onclick="submitForm()">Enviar</button>
+        <!-- Botão Voltar -->
+        <button onclick="previousStep()">Voltar</button>
+    </div>
 
-<form action="/submit" method="POST">
-  <button type="submit">Enviar</button>
-</form>
 
 {{>partials/footer}}
