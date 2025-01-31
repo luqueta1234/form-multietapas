@@ -4,11 +4,17 @@
 function saveData() {
     if (document.getElementById('nome')) {
         sessionStorage.setItem('nome', document.getElementById('nome').value);
+    }
+
+    if (document.getElementById('email')) {
         sessionStorage.setItem('email', document.getElementById('email').value);
     }
 
     if (document.getElementById('endereco')) {
         sessionStorage.setItem('endereco', document.getElementById('endereco').value);
+    }
+
+    if (document.getElementById('cidade')) {
         sessionStorage.setItem('cidade', document.getElementById('cidade').value);
     }
 }
@@ -52,7 +58,7 @@ function showResumo() {
     const email = sessionStorage.getItem('email') || "Não informado";
     const endereco = sessionStorage.getItem('endereco') || "Não informado";
     const cidade = sessionStorage.getItem('cidade') || "Não informado";
-    
+
     const resumo = `
         <p><strong>Nome:</strong> ${nome}</p>
         <p><strong>E-mail:</strong> ${email}</p>
@@ -71,8 +77,40 @@ if (window.location.pathname.includes('etapa3')) {
 
 // Enviar o formulário (por exemplo, para um backend)
 function submitForm() {
-    alert("Formulário enviado com sucesso!");
-    // Aqui você pode enviar os dados para o servidor
+    // Coleta os dados do sessionStorage
+    const nome = sessionStorage.getItem('nome');
+    const email = sessionStorage.getItem('email');
+    const endereco = sessionStorage.getItem('endereco');
+    const cidade = sessionStorage.getItem('cidade');
+
+    // Verifica se os dados necessários estão presentes
+    if (!nome || !email || !endereco || !cidade) {
+        alert('Todos os campos são obrigatórios!');
+        return;
+    }
+
+    // Envia os dados para o backend via fetch
+    fetch('/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            nome,
+            email,
+            endereco,
+            cidade
+        })
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert('Formulário enviado com sucesso!');
+        console.log(data);  // Aqui você pode logar ou tratar a resposta do servidor
+    })
+    .catch(error => {
+        alert('Erro ao enviar os dados!');
+        console.error('Erro:', error);
+    });
 }
 
 // Mostrar resumo apenas na etapa 3

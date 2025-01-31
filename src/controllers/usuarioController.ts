@@ -36,10 +36,14 @@ export const etapa3 = (req: Request, res: Response) => {
 
 export const submit = async (req: Request, res: Response) => {
     try {
-        await Usuario.create(formData);
+        console.log('Dados recebidos:', req.body);  // Adiciona isso para verificar os dados
+        const { nome, email, endereco, cidade } = req.body;
+
+        await Usuario.create({ nome, email, endereco, cidade });
+
         res.send('Cadastro concluído com sucesso!');
     } catch (error) {
-        console.error(error);
+        console.error('Erro ao salvar no banco:', error);
         res.status(500).send('Erro ao salvar no banco de dados.');
     }
 };

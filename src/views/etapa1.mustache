@@ -1,9 +1,10 @@
 {{>partials/header}}
 
-<form action="/etapa1" method="POST">
-  <input type="text" id="nome" name="nome" placeholder="Nome" required>
-  <input type="email" id="email" name="email" placeholder="E-mail" required>
-  <button type="submit">Próximo</button>
-</form>
+   <div class="form-container">
+        <h2>Etapa 1: Informações Pessoais</h2>
+        <input type="text" id="nome" placeholder="Nome" required>
+        <input type="email" id="email" placeholder="E-mail" required>
+        <button onclick="nextStep()">Próximo</button>
+    </div>
 
 {{>partials/footer}}
