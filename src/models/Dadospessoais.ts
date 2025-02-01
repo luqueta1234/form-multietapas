@@ -1,4 +1,4 @@
-//Dados pessoais do banco de dados
+// Tabela de dados pessoais do banco de dados
 
 import {Model, DataTypes} from 'sequelize'
 import {sequelize} from '../instances/mysql'
@@ -25,13 +25,17 @@ export interface DadosPessoaisInstance extends Model {
     observacoes: string
 }
 
-export const Usuario = sequelize.define<DadosPessoaisInstance>("DadosPessoais", {
+export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPessoais", {
     id_dados_pessoais: {
         primaryKey: true,
         type: DataTypes.INTEGER,
         autoIncrement: true
     },
     id_dados_gerais: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    id_dados_clinicos: {
         type: DataTypes.INTEGER,
         allowNull: false
     },
@@ -52,6 +56,10 @@ export const Usuario = sequelize.define<DadosPessoaisInstance>("DadosPessoais", 
         allowNull: true
     },
     endereco:{
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    bairro:{
         type: DataTypes.STRING,
         allowNull: true
     },
@@ -77,6 +85,10 @@ export const Usuario = sequelize.define<DadosPessoaisInstance>("DadosPessoais", 
     },
     telefone_celular:{
         type: DataTypes.CHAR(9),
+        allowNull: true
+    },
+    observacoes:{
+        type: DataTypes.TEXT,
         allowNull: true
     }
 }, {
