@@ -1,10 +1,27 @@
 {{>partials/header}}
 
-   <div class="form-container">
-        <h2>Etapa 1: Informações Pessoais</h2>
-        <input type="text" id="nome" placeholder="Nome" required>
-        <input type="email" id="email" placeholder="E-mail" required>
-        <button onclick="nextStep()">Próximo</button>
-    </div>
+    <h1>Cadastro - Etapa 1</h1>
+    <form action="/etapa1" method="POST">
+        <label>Nome:</label>
+        <input type="text" name="nome" required>
+        <br>
+
+        <label>Sexo:</label>
+        <select name="sexo">
+            <option value="M">Masculino</option>
+            <option value="F">Feminino</option>
+        </select>
+        <br>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <br>
+
+        <label>Data de Nascimento:</label>
+        <input type="date" name="data_nascimento" required>
+        <br>
+
+        <button type="submit">Próxima Etapa</button>
+    </form>
 
 {{>partials/footer}}

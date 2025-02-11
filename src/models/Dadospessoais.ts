@@ -3,18 +3,15 @@
 import {Model, DataTypes} from 'sequelize'
 import {sequelize} from '../instances/mysql'
 
-export enum Sexo {
-    "F" = "Feminino",
-    "M" = "Masculino"
-}
-
 export interface DadosPessoaisInstance extends Model {
     id_dados_pessoais: number
     id_dados_gerais: number
+    id_dados_clinicos: number
     nome: string
-    sexo: Sexo
+    sexo: "Masculino" | "Feminino"
     email: string
     data_nascimento: Date
+    endereco: string
     bairro: string
     cidade: string
     estado: string
@@ -44,7 +41,7 @@ export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPesso
         allowNull: false
     },
     sexo: {
-        type: DataTypes.ENUM,
+        type: DataTypes.ENUM("Masculino", "Feminino"),
         allowNull: true
     },
     email: {

@@ -1,12 +1,25 @@
 {{>partials/header}}
 
-  <div class="form-container">
-        <h2>Etapa 3: Resumo</h2>
-        <div id="resumo"></div>
-        <button onclick="submitForm()">Enviar</button>
-        <!-- Botão Voltar -->
-        <button onclick="previousStep()">Voltar</button>
-    </div>
+    <h1>Cadastro - Etapa 3</h1>
+    <form action="/etapa3" method="POST">
+        <label>RG:</label>
+        <input type="text" name="rg" required>
+        <br>
+
+        <label>Telefone Residencial:</label>
+        <input type="text" name="telefone_residencial">
+        <br>
+
+        <label>Telefone Celular:</label>
+        <input type="text" name="telefone_celular" required>
+        <br>
+
+        <label>Observações:</label>
+        <textarea name="observacoes"></textarea>
+        <br>
+
+        <button type="submit">Finalizar</button>
+    </form>
 
 
 {{>partials/footer}}

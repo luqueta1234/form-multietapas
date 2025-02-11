@@ -1,12 +1,27 @@
 {{>partials/header}}
 
- <div class="form-container">
-        <h2>Etapa 2: Endereço</h2>
-        <input type="text" id="endereco" placeholder="Endereço" required>
-        <input type="text" id="cidade" placeholder="Cidade" required>
-        <button onclick="nextStep()">Próximo</button>
-        <!-- Botão Voltar -->
-        <button onclick="previousStep()">Voltar</button>
-    </div>
+    <h1>Cadastro - Etapa 2</h1>
+    <form action="/etapa2" method="POST">
+        <label>Endereço:</label>
+        <input type="text" name="endereco" required>
+        <br>
+
+        <label>Bairro:</label>
+        <input type="text" name="bairro" required>
+        <br>
+
+        <label>Cidade:</label>
+        <input type="text" name="cidade" required>
+        <br>
+
+        <label>Estado:</label>
+        <input type="text" name="estado" required>
+        <br>
+
+        <label>CEP:</label>
+        <input type="text" name="cep" required>
+        <br>
+
+        <button type="submit">Próxima Etapa</button>
 
 {{>partials/footer}}

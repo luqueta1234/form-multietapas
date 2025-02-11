@@ -8,6 +8,14 @@ export interface CotidianoPacienteInstance extends Model{
     id_dados_pessoais: number
     trabalho: string
     observacoes: string
+    maior_tempo: "Em pé" | "Sentado" | "Andando"
+    posicao_trabalho: "Em pé" | "Sentado" | "Andando"
+    duracao: string
+    pratica_atividade_fisica: "Sim" | "Não"
+    frequencia_atividadefisica: string
+    visita_podologo: "Sim" | "Não"
+    frequencia_podologo: string
+    esporte: string
 }
 
 export const CotidianoPaciente = sequelize.define<CotidianoPacienteInstance>("CotidianoPaciente", {
@@ -26,6 +34,38 @@ export const CotidianoPaciente = sequelize.define<CotidianoPacienteInstance>("Co
     },
     observacoes:{
         type: DataTypes.TEXT,
+        allowNull: true
+    },
+    maior_tempo:{
+        type: DataTypes.ENUM("Em pé", "Sentado", "Andando"),
+        allowNull: true
+    },
+    posicao_trabalho:{
+        type: DataTypes.ENUM("Em pé", "Sentado", "Andando"),
+        allowNull: true
+    },
+    duracao:{
+        type: DataTypes.TEXT,
+        allowNull: true
+    },
+    pratica_atividade_fisica:{
+        type: DataTypes.ENUM("Sim", "Não"),
+        allowNull: true
+    },
+    frequencia_atividadefisica:{
+        type: DataTypes.TEXT,
+        allowNull: true
+    },
+    visita_podologo:{
+        type: DataTypes.ENUM("Sim", "Não"),
+        allowNull: true
+    },
+    frequencia_podologo:{
+        type: DataTypes.TEXT,
+        allowNull: true
+    },
+    esporte:{
+        type: DataTypes.STRING,
         allowNull: true
     }
 },{
