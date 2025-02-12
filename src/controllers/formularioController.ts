@@ -6,6 +6,7 @@ import { DadosGerais } from "../models/Dadosgerais";
 import { DadosPessoais } from "../models/Dadospessoais";
 import { DescricaoPe } from "../models/Descricaopepaciente";
 import { FormatoUnha } from "../models/Formatounha";
+import {}
 import { Request, Response } from "express";
 
 export const index = async (req: Request, res: Response) => {
