@@ -8,7 +8,7 @@ export interface DadosPessoaisInstance extends Model {
     id_dados_gerais: number
     id_dados_clinicos: number
     nome: string
-    sexo: "Masculino" | "Feminino"
+    sexo: "Masculino" | "Feminino" | "Prefiro não informar"
     email: string
     data_nascimento: Date
     endereco: string
