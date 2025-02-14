@@ -1,12 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etapa 3: Resumo</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Buscar Paciente</title>
 </head>
 <body>
+    <h2>Buscar Paciente pelo CPF</h2>
+    
+    <input type="text" id="cpfInput" placeholder="Digite o CPF">
+    <button onclick="buscarPaciente()">Buscar</button>
 
-    <h1>TESTE</h1>
+    <h3>Resultado:</h3>
+    <div id="resultado"></div>
+
+    <script>
+        async function buscarPaciente() {
+            const cpf = document.getElementById("cpfInput").value;
+
+            if (!cpf) {
+                alert("Digite um CPF!");
+                return;
+            }
+
+            try {
+                const response = await fetch(`http://localhost:3000/buscar-paciente?cpf=${cpf}`);
+                const data = await response.json();
+
+                const resultadoDiv = document.getElementById("resultado");
+                resultadoDiv.innerHTML = "";
+
+                if (response.ok) {
+                    resultadoDiv.innerHTML = `
+                        <p><strong>Nome:</strong> ${data.nome}</p>
+                        <p><strong>CPF:</strong> ${data.cpf}</p>
+                        <p><strong>Data de Nascimento:</strong> ${data.data_nascimento}</p>
+                        <p><strong>Telefone:</strong> ${data.telefone}</p>
+                    `;
+                } else {
+                    resultadoDiv.innerHTML = `<p style="color: red;">${data.message}</p>`;
+                }
+            } catch (error) {
+                console.error("Erro:", error);
+                document.getElementById("resultado").innerHTML = `<p style="color: red;">Erro ao buscar paciente.</p>`;
+            }
+        }
+    </script>
 </body>
+</html>

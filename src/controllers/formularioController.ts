@@ -43,6 +43,10 @@ export const etapa1Post = async (req: Request, res: Response) => {
 };
 
 export const etapa2 = async (req: Request, res: Response) => {
+    res.render("etapa2");
+}
+
+export const etapa2Post = async (req: Request, res: Response) => {
     const { maior_tempo, duracao, pratica_atividade_fisica, visita_podologo,
             frequencia_podologo, esporte, dum, amamentando, ciclo_menstrual_regular,
             medicamento, fumante, alergico, substancias,
@@ -78,6 +82,10 @@ export const etapa2 = async (req: Request, res: Response) => {
 };    
 
 export const etapa3 = async (req: Request, res: Response) => {
+    res.render("etapa3");
+}
+
+export const etapa3Post = async (req: Request, res: Response) => {
     const  { hipertirioidismo, renal, epilepsia, quimioterapia_ou_radioterapia, osteoporose, hipotiroidismo,
         neuropatia, hepatite, antecedentes_oncologicos, cardiopatia, hipertensao, reumatismo, hanseniase,
         cirurgia_mmii,  marca_passo, hipotensao, comprometimento_vascular, diabetes, taxa_glicemica,
@@ -111,7 +119,11 @@ export const etapa3 = async (req: Request, res: Response) => {
     res.redirect(`/etapa4?id=${form}`)    
 };
 
-export const etapa4 = async (req: Request, res: Response) =>{
+export const etapa4 = async (req: Request, res: Response) => {
+    res.render("etapa4");
+}
+
+export const etapa4Post = async (req: Request, res: Response) =>{
     const { dedo_flexivel,dedo_rigido, dedo_espalmado, dedo_martelo, queda_metatarso,tipo_marcha, qual_tipo_marcha,
             joelho, articulacao, sensibilidade_a_dor,
     } = req.body
@@ -133,7 +145,11 @@ export const etapa4 = async (req: Request, res: Response) =>{
     res.redirect(`/etapa5?id=${form}`)
 };
 
-export const etapa5 = async (req: Request, res: Response) =>{
+export const etapa5 = async (req: Request, res: Response) => {
+    res.render("etapa5");
+}
+
+export const etapa5Post = async (req: Request, res: Response) =>{
     const { involuta, telha, funil, gancho, caracol, torques, normal, cunha, 
         onicoatrofia, onicocriptose, onicorrex, granuloma, onicogrifose, onicolise,
         onicofose, onicomicose, psoriase_ungueal, observacoes
@@ -173,7 +189,11 @@ export const etapa5 = async (req: Request, res: Response) =>{
     res.redirect(`/etapa6?id=${form}`)
 };
 
-export const etapa6 = async (req: Request, res: Response) =>{
+export const etapa6 = async (req: Request, res: Response) => {
+    res.render("etapa6");
+}
+
+export const etapa6Post = async (req: Request, res: Response) =>{
     const { bromidrose, hidrose, desidrose, isquemia, mal_perfurante, edema,
             tinea, psoriase, tungiase, fissuras, perfusao_pe_direito, perfusao_pe_esquerdo,
             verruga_plantar, calo_dorsal, calo_plantar, hiperqueratose, calo_interdigital,
@@ -201,4 +221,8 @@ export const etapa6 = async (req: Request, res: Response) =>{
         erisipela, 
         observacoes
     })
+}
+
+export const submit = async (req: Request, res: Response) => {
+    res.send("Formulário enviado com sucesso!");
 }
