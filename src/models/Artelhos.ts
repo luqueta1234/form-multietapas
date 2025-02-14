@@ -14,6 +14,7 @@ export interface ArtelhosInstance extends Model {
     onicofose: boolean
     onicomicose: boolean
     psoriase_ungueal: boolean
+    observacoes: string
 }
 
 export const Artelhos = sequelize.define<ArtelhosInstance>("Artelhos", {
@@ -56,6 +57,10 @@ export const Artelhos = sequelize.define<ArtelhosInstance>("Artelhos", {
     },
     psoriase_ungueal:{
         type: DataTypes.TINYINT,
+        allowNull: true
+    },
+    observacoes:{
+        type: DataTypes.TEXT,
         allowNull: true
     }
 },{

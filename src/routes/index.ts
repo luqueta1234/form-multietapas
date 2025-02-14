@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import * as DadosPessoais from '../controllers/dadospessoaisController'
+import * as DadosPessoais from '../controllers/formularioController'
 
 const router = Router()
 
