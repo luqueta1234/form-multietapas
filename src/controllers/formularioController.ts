@@ -49,7 +49,7 @@ export const etapa2 = async (req: Request, res: Response) => {
 export const etapa2Post = async (req: Request, res: Response) => {
     const { maior_tempo, duracao, pratica_atividade_fisica, visita_podologo,
             frequencia_podologo, esporte, dum, amamentando, ciclo_menstrual_regular,
-            medicamento, fumante, alergico, substancias,
+            medicamento, fumante, alergico, substancias, gestante
     } = req.body;
 
     const form = await DadosGerais.create({
@@ -68,6 +68,7 @@ export const etapa2Post = async (req: Request, res: Response) => {
     await DadosFemininos.create({
         dum,
         amamentando,
+        gestante,
         ciclo_menstrual_regular,
     })
 
@@ -151,15 +152,8 @@ export const etapa5 = async (req: Request, res: Response) => {
 
 export const etapa5Post = async (req: Request, res: Response) =>{
     const { involuta, telha, funil, gancho, caracol, torques, normal, cunha, 
-        onicoatrofia, onicocriptose, onicorrex, granuloma, onicogrifose, onicolise,
+        onicoatrofia, onicocriptose, onicorrexe, granuloma, onicogrifose, onicolise,
         onicofose, onicomicose, psoriase_ungueal, observacoes
-        
-       
-        
-       
-       
-        
-       
     } = req.body
 
     const form = await FormatoUnha.create({
@@ -176,7 +170,7 @@ export const etapa5Post = async (req: Request, res: Response) =>{
     await Artelhos.create({
         onicoatrofia, 
         onicocriptose, 
-        onicorrex, 
+        onicorrexe, 
         granuloma,
         onicogrifose, 
         onicolise,

@@ -30,11 +30,11 @@ export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPesso
     },
     id_dados_gerais: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: true
     },
     id_dados_clinicos: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: true
     },
     nome: {
         type: DataTypes.STRING,
