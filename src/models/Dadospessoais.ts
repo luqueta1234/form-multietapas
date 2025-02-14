@@ -2,6 +2,7 @@
 
 import {Model, DataTypes} from 'sequelize'
 import {sequelize} from '../instances/mysql'
+import { timeStamp } from 'console'
 
 export interface DadosPessoaisInstance extends Model {
     id_dados_pessoais: number
@@ -89,6 +90,6 @@ export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPesso
         allowNull: true
     }
 }, {
-    tableName: 'dados_pessoais',
-    timestamps: true
+    timestamps: true,
+    tableName: 'dados_pessoais'
 })
