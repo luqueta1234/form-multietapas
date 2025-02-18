@@ -22,14 +22,11 @@ export const CotidianoPaciente = sequelize.define<CotidianoPacienteInstance>("Co
     id_cotidiano_paciente:{
         primaryKey: true,
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        autoIncrement: true
     },
     id_dados_pessoais:{
         type: DataTypes.INTEGER,
-        allowNull: false
-    },
-    trabalho:{
-        type: DataTypes.TEXT,
         allowNull: false
     },
     observacoes:{
@@ -66,6 +63,10 @@ export const CotidianoPaciente = sequelize.define<CotidianoPacienteInstance>("Co
     },
     esporte:{
         type: DataTypes.STRING,
+        allowNull: true
+    },
+    queixa:{
+        type: DataTypes.TEXT,
         allowNull: true
     }
 },{

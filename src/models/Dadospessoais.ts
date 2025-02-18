@@ -27,11 +27,8 @@ export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPesso
     id_dados_pessoais: {
         primaryKey: true,
         type: DataTypes.INTEGER,
+        allowNull: false,
         autoIncrement: true
-    },
-    id_dados_gerais: {
-        type: DataTypes.INTEGER,
-        allowNull: true
     },
     id_dados_clinicos: {
         type: DataTypes.INTEGER,
@@ -43,7 +40,11 @@ export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPesso
     },
     sexo: {
         type: DataTypes.ENUM("Masculino", "Feminino"),
-        allowNull: true
+        allowNull: false
+    },
+    trabalho: {
+        type: DataTypes.TEXT,
+        allowNull: false
     },
     email: {
         type: DataTypes.STRING,
@@ -88,6 +89,16 @@ export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPesso
     observacoes:{
         type: DataTypes.TEXT,
         allowNull: true
+    },
+    createdAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW
+    },
+    updatedAt: {
+        type: DataTypes.DATE,
+        allowNull: false,
+        defaultValue: DataTypes.NOW
     }
 }, {
     timestamps: true,

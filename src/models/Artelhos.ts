@@ -21,7 +21,8 @@ export const Artelhos = sequelize.define<ArtelhosInstance>("Artelhos", {
     id_artelhos:{
         primaryKey: true,
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        autoIncrement: true
     },
     onicoatrofia:{
         type: DataTypes.TINYINT,

@@ -2,7 +2,6 @@ import { AlteracoesLesoes } from "../models/Alteracoeslesoes";
 import { CotidianoPaciente } from "../models/Cotidianopaciente";
 import { DadosClinicos } from "../models/Dadosclinicos";
 import { DadosFemininos } from "../models/Dadosfemininos";
-import { DadosGerais } from "../models/Dadosgerais";
 import { DadosPessoais } from "../models/Dadospessoais";
 import { DescricaoPe } from "../models/Descricaopepaciente";
 import { FormatoUnha } from "../models/Formatounha";
@@ -19,7 +18,7 @@ export const etapa1 = async (req: Request, res: Response) => {
 
 export const etapa1Post = async (req: Request, res: Response) => {
     const { nome, endereco, bairro, cidade, estado, cep, telefone_residencial, 
-            telefone_celular, email, data_nascimento, sexo
+            telefone_celular, email, data_nascimento, sexo, trabalho
     } = req.body;
 
     const form = await DadosPessoais.create({
@@ -33,10 +32,8 @@ export const etapa1Post = async (req: Request, res: Response) => {
         telefone_celular,
         email,
         data_nascimento,
-        sexo
-
-        
-        
+        sexo,
+        trabalho,     
     });
   
     res.redirect(`/etapa2?id=${form}`);
@@ -47,25 +44,24 @@ export const etapa2 = async (req: Request, res: Response) => {
 }
 
 export const etapa2Post = async (req: Request, res: Response) => {
-    const { maior_tempo, duracao, pratica_atividade_fisica, visita_podologo,
+    const { id_dados_pessoais, id_dados_femininos, maior_tempo, duracao, pratica_atividade_fisica, visita_podologo,
             frequencia_podologo, esporte, dum, amamentando, ciclo_menstrual_regular,
-            medicamento, fumante, alergico, substancias, gestante
+            medicamento, fumante, alergico, substancias, gestante, queixa
     } = req.body;
 
-    const form = await DadosGerais.create({
-        
-    });
-
-    await CotidianoPaciente.create({
+    const form = await CotidianoPaciente.create({
+        id_dados_pessoais,
         maior_tempo,
         duracao,
         pratica_atividade_fisica,
         visita_podologo,
         frequencia_podologo,
         esporte,
-    })
+        queixa,
+    });
 
     await DadosFemininos.create({
+        id_dados_pessoais,
         dum,
         amamentando,
         gestante,
@@ -73,13 +69,15 @@ export const etapa2Post = async (req: Request, res: Response) => {
     })
 
     await DadosClinicos.create({
+        id_dados_pessoais,
         medicamento,
         fumante,
         alergico,
         substancias,
     })
 
-    res.redirect(`/etapa3?id=${form}`);
+
+    res.redirect(`/etapa3?id=${id_dados_pessoais}`);
 };    
 
 export const etapa3 = async (req: Request, res: Response) => {
@@ -112,8 +110,8 @@ export const etapa3Post = async (req: Request, res: Response) => {
         hipotensao, 
         comprometimento_vascular,
         diabetes, taxa_glicemica,
-        data_ultima_verificacao, 
-        insulina,  
+        data_ultima_verificacao,
+        insulina,
         dieta_hidrica
     });
     

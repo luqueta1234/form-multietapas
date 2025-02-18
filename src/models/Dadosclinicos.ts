@@ -41,7 +41,8 @@ export const DadosClinicos = sequelize.define<DadosClinicosInstance>("DadosClini
     id_dados_clinicos:{
         primaryKey: true,
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        autoIncrement: true
     },
     id_dados_femininos:{
         type: DataTypes.INTEGER,
