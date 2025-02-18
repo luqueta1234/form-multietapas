@@ -18,18 +18,21 @@
             flex-wrap: wrap;
             font-size: 1rem;
         }
-        .form-group input,
         .form-group textarea {
-            flex-grow: 1;
-            font-size: 1rem;
-            padding: 6px;
-        }
+        flex-grow: 1;
+        font-size: 1.2em;
+        padding: 8px;
+        font-weight: bold; /* Texto dentro do input em negrito */
+        border-width: 3px; /* Aumenta a borda */
+        border-color: #ccc; /* Cor da borda */
+        border-radius: 5px; /* Bordas arredondadas */
+    }
         .form-group {
             margin-bottom: 15px;
             font-size: 1.1rem;
         }
         .form-check-input {
-            transform: scale(1.1);
+            transform: scale(1.3);
         }
         .move-left {
             margin-left: 50px;
@@ -53,6 +56,9 @@
                 flex-direction: column;
                 gap: 8px;
             }
+        }
+        .input{
+            font-weight: bold;
         }
     </style>
 </head>

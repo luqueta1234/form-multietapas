@@ -2,6 +2,7 @@
 
 import {Model, DataTypes} from 'sequelize'
 import {sequelize} from '../instances/mysql'
+import { DadosPessoais } from './Dadospessoais'
 
 export interface CotidianoPacienteInstance extends Model{
     id_cotidiano_paciente: number
@@ -25,10 +26,16 @@ export const CotidianoPaciente = sequelize.define<CotidianoPacienteInstance>("Co
         allowNull: false,
         autoIncrement: true
     },
-    id_dados_pessoais:{
+    id_dados_pessoais: {
         type: DataTypes.INTEGER,
-        allowNull: false
-    },
+        allowNull: true,
+        references: {
+          model: DadosPessoais,
+          key: "id_dados_pessoais",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+      },
     observacoes:{
         type: DataTypes.TEXT,
         allowNull: true
@@ -73,3 +80,15 @@ export const CotidianoPaciente = sequelize.define<CotidianoPacienteInstance>("Co
     tableName:'cotidiano_paciente',
     timestamps: false
 })
+
+CotidianoPaciente.belongsTo(DadosPessoais, {
+    foreignKey: "id_dados_pessoais",
+    as: "dadosPessoais"
+});
+
+DadosPessoais.hasOne(CotidianoPaciente, {
+    foreignKey: "id_dados_pessoais",
+    as: "cotidianoPaciente"
+});
+
+export default DadosPessoais;

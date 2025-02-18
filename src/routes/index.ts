@@ -7,7 +7,7 @@ router.get('/',DadosPessoais.index)
 router.get('/etapa1',DadosPessoais.etapa1)
 router.post('/etapa1',DadosPessoais.etapa1Post)
 
-router.get('/etapa2',DadosPessoais.etapa2);
+router.get('/etapa2',DadosPessoais.etapa2)
 router.post('/etapa2',DadosPessoais.etapa2Post)
 
 router.get('/etapa3',DadosPessoais.etapa3)

@@ -25,8 +25,8 @@ export interface DadosPessoaisInstance extends Model {
 
 export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPessoais", {
     id_dados_pessoais: {
-        primaryKey: true,
         type: DataTypes.INTEGER,
+        primaryKey: true,
         allowNull: false,
         autoIncrement: true
     },
@@ -39,7 +39,7 @@ export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPesso
         allowNull: false
     },
     sexo: {
-        type: DataTypes.ENUM("Masculino", "Feminino"),
+        type: DataTypes.ENUM("Masculino", "Feminino", "Prefiro não informar"),
         allowNull: false
     },
     trabalho: {

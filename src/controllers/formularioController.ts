@@ -36,11 +36,13 @@ export const etapa1Post = async (req: Request, res: Response) => {
         trabalho,     
     });
   
-    res.redirect(`/etapa2?id=${form}`);
+    console.log("Novo ID de dados pessoais:", form.id_dados_pessoais);
+
+    res.redirect(`/etapa2?id=${form.id_dados_pessoais}`);
 };
 
 export const etapa2 = async (req: Request, res: Response) => {
-    res.render("etapa2");
+    res.render("etapa2", { id_dados_pessoais: req.query.id });
 }
 
 export const etapa2Post = async (req: Request, res: Response) => {
@@ -76,8 +78,9 @@ export const etapa2Post = async (req: Request, res: Response) => {
         substancias,
     })
 
+    console.log(id_dados_pessoais);
 
-    res.redirect(`/etapa3?id=${id_dados_pessoais}`);
+    res.redirect(`/etapa3?id=${form.id_cotidiano_paciente}`);
 };    
 
 export const etapa3 = async (req: Request, res: Response) => {
