@@ -17,6 +17,7 @@ export const etapa1 = async (req: Request, res: Response) => {
 }
 
 export const etapa1Post = async (req: Request, res: Response) => {
+    
     try {
     const { nome, endereco, bairro, cidade, estado, cep, telefone_residencial, 
             telefone_celular, email, data_nascimento, sexo, trabalho, id_dados_pessoais, 
@@ -36,6 +37,8 @@ export const etapa1Post = async (req: Request, res: Response) => {
             erisipela,
     } = req.body;
 
+    console.log("Dados recebidos no corpo da requisição:", req.body);
+
     const form = await DadosPessoais.create({
         nome,
         endereco,
@@ -50,6 +53,8 @@ export const etapa1Post = async (req: Request, res: Response) => {
         sexo,
         trabalho,     
     });
+
+    console.log("Dados pessoais criados:", form);
 
     await CotidianoPaciente.create({
         id_dados_pessoais,
@@ -187,6 +192,7 @@ export const etapa1Post = async (req: Request, res: Response) => {
     })
 
     res.redirect(`/teste/${form.id_dados_pessoais}`)
+
 
     } catch (error) {
     console.error("Erro ao cadastrar cliente:", error);
