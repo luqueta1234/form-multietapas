@@ -40,11 +40,11 @@ export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPesso
     },
     sexo: {
         type: DataTypes.ENUM("Masculino", "Feminino", "Prefiro não informar"),
-        allowNull: false
+        allowNull: true
     },
     trabalho: {
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: true
     },
     email: {
         type: DataTypes.STRING,
@@ -89,18 +89,8 @@ export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPesso
     observacoes:{
         type: DataTypes.TEXT,
         allowNull: true
-    },
-    createdAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-        defaultValue: DataTypes.NOW
-    },
-    updatedAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-        defaultValue: DataTypes.NOW
     }
 }, {
-    timestamps: true,
+    timestamps: false,
     tableName: 'dados_pessoais'
 })

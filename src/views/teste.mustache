@@ -18,47 +18,47 @@
 
           <div class="mb-3">
             <label for="endereco" class="form-label">Endereço:</label>
-            <input type="text" class="form-control" id="endereco" placeholder="Endereço do Paciente">
+            <input type="text" class="form-control" name="endereco" placeholder="Endereço do Paciente">
           </div>
 
           <div class="row">
             <div class="col-md-4">
               <label for="bairro" class="form-label">Bairro:</label>
-              <input type="text" class="form-control" id="bairro" placeholder="Bairro">
+              <input type="text" class="form-control" name="bairro" placeholder="Bairro">
             </div>
             <div class="col-md-4">
               <label for="cidade" class="form-label">Cidade:</label>
-              <input type="text" class="form-control" id="cidade" placeholder="Cidade">
+              <input type="text" class="form-control" name="cidade" placeholder="Cidade">
             </div>
             <div class="col-md-4">
               <label for="estado" class="form-label">Estado:</label>
-              <input type="text" class="form-control" id="estado" placeholder="Estado">
+              <input type="text" class="form-control" name="estado" placeholder="Estado">
             </div>
           </div>
           <br>
           <div class="row">
             <div class="col-md-4">
-              <label for="cep" class="form-label">Cep:</label>
-              <input type="text" class="form-control" id="cep" placeholder="Cep">
+              <label for="cep" class="form-label">CEP:</label>
+              <input type="text" class="form-control" name="cep" placeholder="Cep">
             </div>
             <div class="col-md-4">
               <label for="telefone_residencial" class="form-label">Tel.Res (Opcional):</label>
-              <input type="text" class="form-control" id="telefone_residencial" placeholder="Tel.Res">
+              <input type="text" class="form-control" name="telefone_residencial" placeholder="Tel.Res">
             </div>
             <div class="col-md-4">
               <label for="telefone_celular" class="form-label">Celular:</label>
-              <input type="text" class="form-control" id="telefone_celular" placeholder="Celular">
+              <input type="text" class="form-control" name="telefone_celular" placeholder="Celular">
             </div>
           </div>
           <br>
           <div class="row">
             <div class="col-md-4">
               <label for="email" class="form-label">Email:</label>
-              <input type="email" class="form-control" id="email" placeholder="Email">
+              <input type="email" class="form-control" name="email" placeholder="Email">
             </div>
             <div class="col-md-4">
               <label for="data_nascimento" class="form-label">Data Nascimento:</label>
-              <input type="date" class="form-control" id="data_nascimento">
+              <input type="date" class="form-control" name="data_nascimento">
             </div>
             <div class="col-md-4">
               <label for="sexo" class="form-label">Sexo:</label>
@@ -81,10 +81,10 @@
           <br>
           <div class="mb-3">
             <label for="profissao" class="form-label">Qual sua profissão:</label>
-            <input type="text" class="form-control" id="profissao" placeholder="Nome da profissão">
+            <input type="text" class="form-control" name="profissao" placeholder="Nome da profissão">
           </div>
           <div class="d-flex justify-content-end">
-            <button type="button" class="btn btn-primary" onclick="nextStep(1)">Próximo</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
           </div>
         </div>
       </div>
@@ -758,8 +758,8 @@
             <button type="button" class="btn btn-secondary" onclick="prevStep(6)">Voltar</button>
             <!-- Botão "Enviar" como type="button" para não submeter o formulário -->
             <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
           </div>
-        </form>
       </div>
     </div>
   </div>  
