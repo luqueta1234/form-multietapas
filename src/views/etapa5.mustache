@@ -1,25 +1,161 @@
 {{>partials/header}}
 
-    <h1>Cadastro - Etapa 3</h1>
-    <form action="/etapa3" method="POST">
-        <label>RG:</label>
-        <input type="text" name="rg" required>
-        <br>
+  <style>
+        body {
+            font-size: 16px;
+        }
+        .card {
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 90%;
+        }
+        .form-group {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .table th, .table td {
+            text-align: center;
+            font-size: 1rem;
+            background-color: #f9f9f9;
+        }
+        .form-check-label {
+            font-size: 1rem;
+        }
+        .form-control {
+            font-size: 1rem;
+            padding: 8px;
+        }
+        .form-check-input {
+            transform: scale(1.2);
+        }
+        .artelhos-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .unhas-imagem {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        .btn {
+            font-size: 1em;
+            padding: 8px 16px;
+        }
+        .form-control {
+            border-width: 2px; 
+            border-color: #000000; 
+            border-radius: 7px; 
+            padding: 10px;
+            font-size: 1.1em;
+        }
+    </style>
 
-        <label>Telefone Residencial:</label>
-        <input type="text" name="telefone_residencial">
-        <br>
-
-        <label>Telefone Celular:</label>
-        <input type="text" name="telefone_celular" required>
-        <br>
-
-        <label>Observações:</label>
-        <textarea name="observacoes"></textarea>
-        <br>
-
-        <button type="submit">Finalizar</button>
-    </form>
-
+    <body>
+    <div class="card">
+        <div class="card-header text-center" style="font-size: 1.5rem;">Formato das Unhas e Artelhos</div>
+        <div class="card-body text-center">
+            <div class="unhas-imagem">
+                <img src="/public/images/FormatoDaUnha3.png" alt="Formato das Unhas" class="img-fluid">
+            </div>
+        </div>
+        <div class="card-body">
+            <form action="/etapa5" method="POST">
+                <form>
+                    <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Formato</th>
+                            <th>Opção</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Involuta</td>
+                            <td><input type="radio" name="formato" value="normal"></td>
+                        </tr>
+                        <tr>
+                            <td>Telha</td>
+                            <td><input type="radio" name="formato" value="involuta"></td>
+                        </tr>
+                        <tr>
+                            <td>Funil</td>
+                            <td><input type="radio" name="formato" value="telha"></td>
+                        </tr>
+                        <tr>
+                            <td>Gancho</td>
+                            <td><input type="radio" name="formato" value="funil"></td>
+                        </tr>
+                        <tr>
+                            <td>Caracol</td>
+                            <td><input type="radio" name="formato" value="gancho"></td>
+                        </tr>
+                        <tr>
+                            <td>Torquês</td>
+                            <td><input type="radio" name="formato" value="torques"></td>
+                        </tr>
+                        <tr>
+                            <td>Normal</td>
+                            <td><input type="radio" name="formato" value="caracol"></td>
+                        </tr>
+                        <tr>
+                            <td>Cunha</td>
+                            <td><input type="radio" name="formato" value="cunha"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="form-group">
+                    <label for="artelhos">Artelhos:</label>
+                    <div class="artelhos-container">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="onicoatrofia">
+                            <label class="form-check-label" for="onicoatrofia">Onicoatrofia</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="onicocriptose">
+                            <label class="form-check-label" for="onicocriptose">Onicocriptose</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="onicorrexe">
+                            <label class="form-check-label" for="onicorrexe">Onicorrexe</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="granuloma">
+                            <label class="form-check-label" for="granuloma">Granuloma</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="onicogrifose">
+                            <label class="form-check-label" for="onicogrifose">Onicogrifose</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="onicolise">
+                            <label class="form-check-label" for="onicolise">Onicolise</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="onicofose">
+                            <label class="form-check-label" for="onicofose">Onicofose</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="onicomicose">
+                            <label class="form-check-label" for="onicomicose">Onicomicose</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="psoriase_ungueal">
+                            <label class="form-check-label" for="psoriase">Psoríase Ungueal</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="alteracoes">Outras alterações ungueais:</label>
+                    <textarea class="form-control" id="observacoes" placeholder="Informe outras alterações"></textarea>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <a href="/etapa4.html" class="btn btn-primary">Voltar</a>
+                    <a href="/etapa6.html" class="btn btn-primary">Próximo</a>
+                </div>
+                </form>
+            </form>
+        </div>
+    </div>
 
 {{>partials/footer}}

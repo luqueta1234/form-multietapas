@@ -18,13 +18,11 @@ server.use(express.json());
 
 //habilitar o POST (via body)
 server.use(express.urlencoded({extended:true}))
+server.use(express.json());
 
 server.use(mainRoutes)
 server.listen(process.env.PORT)
 
-
-
 server.use((req,res) =>{
     res.send("Página não encontrada")
 })
-

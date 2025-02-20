@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro de Paciente - Podologia</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .step { display: none; }
+    .step.active { display: block; }
+  </style>
+</head>
+<body>
+  <div class="container my-4">
+    <h1 class="text-center mb-4">Cadastro de Paciente - Podologia</h1>
+
+    <!-- ETAPA 1 -->
+    <div id="etapa1" class="step active">
+      <div class="card">
+        <div class="card-header fs-4">Etapa 1: Dados Pessoais</div>
+        <div class="card-body">
+          <p>Conteúdo da etapa 1</p>
+          <button type="button" class="btn btn-primary" onclick="nextStep(1)">Próximo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ETAPA 2 -->
+    <div id="etapa2" class="step">
+      <div class="card">
+        <div class="card-header fs-4">Etapa 2: Dados Gerais</div>
+        <div class="card-body">
+          <p>Conteúdo da etapa 2</p>
+          <button type="button" class="btn btn-secondary" onclick="prevStep(2)">Voltar</button>
+          <button type="button" class="btn btn-primary" onclick="nextStep(2)">Próximo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ETAPA 3 -->
+    <div id="etapa3" class="step">
+      <div class="card">
+        <div class="card-header fs-4">Etapa 3: Dados Clínicos</div>
+        <div class="card-body">
+          <p>Conteúdo da etapa 3</p>
+          <button type="button" class="btn btn-secondary" onclick="prevStep(3)">Voltar</button>
+          <button type="button" class="btn btn-primary" onclick="nextStep(3)">Próximo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ETAPA 4 -->
+    <div id="etapa4" class="step">
+      <div class="card">
+        <div class="card-header fs-4">Etapa 4: Alterações e Lesões dos Pés</div>
+        <div class="card-body">
+          <p>Conteúdo da etapa 4</p>
+          <button type="button" class="btn btn-secondary" onclick="prevStep(4)">Voltar</button>
+          <button type="button" class="btn btn-primary" onclick="nextStep(4)">Próximo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ETAPA 5 -->
+    <div id="etapa5" class="step">
+      <div class="card">
+        <div class="card-header fs-4">Etapa 5: Formato das Unhas e Artelhos</div>
+        <div class="card-body">
+          <p>Conteúdo da etapa 5</p>
+          <button type="button" class="btn btn-secondary" onclick="prevStep(5)">Voltar</button>
+          <button type="button" class="btn btn-primary" onclick="nextStep(5)">Próximo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ETAPA 6 -->
+    <div id="etapa6" class="step">
+      <div class="card">
+        <div class="card-header fs-4">Etapa 6: Alterações e Lesões</div>
+        <div class="card-body">
+          <form onsubmit="event.preventDefault();">
+            <div class="mb-3">
+              <label>
+                <input type="checkbox" name="lesao" value="bromidrose"> Bromidrose
+              </label>
+              <label>
+                <input type="checkbox" name="lesao" value="hidrose"> Hidrose
+              </label>
+              <label>
+                <input type="checkbox" name="lesao" value="desidrose"> Desidrose
+              </label>
+              <label>
+                <input type="checkbox" name="lesao" value="isquemia"> Isquemia
+              </label>
+              <label>
+                <input type="checkbox" name="lesao" value="mal_perfurante"> Mal Perfurante
+              </label>
+              <label>
+                <input type="checkbox" name="lesao" value="edema"> Edema
+              </label>
+              <label>
+                <input type="checkbox" name="lesao" value="tinea"> Tinea
+              </label>
+              <label>
+                <input type="checkbox" name="lesao" value="psoriase"> Psoríase
+              </label>
+              <label>
+                <input type="checkbox" name="lesao" value="tungiase"> Tungíase
+              </label>
+              <label>
+                <input type="checkbox" name="lesao" value="fissuras"> Fissuras
+              </label>
+            </div>
+            <div class="mb-3">
+              <label>Perfusão PD:</label>
+              <label>
+                <input type="radio" name="perfusao_pe_direito" value="normal"> Normal
+              </label>
+              <label>
+                <input type="radio" name="perfusao_pe_direito" value="palido"> Pálido
+              </label>
+              <label>
+                <input type="radio" name="perfusao_pe_direito" value="cianotico"> Cianótico
+              </label>
+            </div>
+            <div class="mb-3">
+              <label>Perfusão PE:</label>
+              <label>
+                <input type="radio" name="perfusao_pe_esquerdo" value="normal"> Normal
+              </label>
+              <label>
+                <input type="radio" name="perfusao_pe_esquerdo" value="palido"> Pálido
+              </label>
+              <label>
+                <input type="radio" name="perfusao_pe_esquerdo" value="cianotico"> Cianótico
+              </label>
+            </div>
+            <div class="mb-3">
+              <label>
+                <input type="checkbox" name="lesao" value="verruga_plantar"> Verruga Plantar
+              </label>
+              <label>
+                <input type="checkbox" name="lesao" value="calo_dorsal"> Calo Dorsal
+              </label>
+              <label>
+                <input type="checkbox" name="lesao" value="calo_plantar"> Calo Plantar
+              </label>
+              <label>
+                <input type="checkbox" name="lesao" value="hiperqueratose"> Hiperqueratose
+              </label>
+              <label>
+                <input type="checkbox" name="lesao" value="calo_interdigital"> Calo Interdigital
+              </label>
+            </div>
+            <div class="mb-3">
+              <label>Já teve ou apresenta Erisipela?</label>
+              <label>
+                <input type="radio" name="erisipela" value="sim"> Sim
+              </label>
+              <label>
+                <input type="radio" name="erisipela" value="nao"> Não
+              </label>
+            </div>
+            <div class="mb-3">
+              <label for="observacoes" class="form-label">Outras alterações na pele:</label>
+              <textarea class="form-control" id="observacoes" placeholder="Informe outras alterações"></textarea>
+            </div>
+            <div class="d-flex justify-content-between">
+              <button type="button" class="btn btn-secondary" onclick="prevStep(6)">Voltar</button>
+              <!-- "Enviar" aqui não submete, apenas mostra um alerta -->
+              <button type="button" class="btn btn-primary" onclick="alert('Dados enviados!')">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- fim container -->
+
+  <!-- Scripts -->
+  <script>
+    function showStep(stepNumber) {
+      document.querySelectorAll('.step').forEach(function(step) {
+        step.classList.remove('active');
+      });
+      var current = document.getElementById('etapa' + stepNumber);
+      if (current) {
+        current.classList.add('active');
+      } else {
+        console.error("Etapa " + stepNumber + " não encontrada!");
+      }
+      window.scrollTo(0, 0);
+    }
+    function nextStep(currentStep) {
+      showStep(currentStep + 1);
+    }
+    function prevStep(currentStep) {
+      showStep(currentStep - 1);
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
