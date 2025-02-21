@@ -144,6 +144,7 @@ export const etapa1Post = async (req: Request, res: Response) => {
 
     const formData: Record<string, any> = {};
 
+        formData.id_dados_pessoais = id_dados_pessoais;
         formData.nome = nome;
         formData.endereco = endereco;
         formData.bairro = bairro;
@@ -248,6 +249,7 @@ export const etapa1Post = async (req: Request, res: Response) => {
     console.log("Dados recebidos no corpo da requisição:", req.body);
 
     const form = await DadosPessoais.create({
+        id_dados_pessoais,
         nome,
         endereco,
         bairro,
@@ -259,7 +261,41 @@ export const etapa1Post = async (req: Request, res: Response) => {
         email,
         data_nascimento,
         sexo,
-        trabalho,     
+        trabalho,
+        maior_tempo,
+        duracao,
+        pratica_atividade_fisica,
+        visita_podologo,
+        frequencia_podologo,
+        esporte,
+        dum,
+        amamentando,
+        ciclo_menstrual_regular,
+        medicamento,
+        fumante,
+        alergico,
+        substancias,
+        gestante,
+        queixa,
+        hipertirioidismo,
+        renal,
+        epilepsia,
+        quimioterapia_ou_radioterapia,
+        osteoporose,
+        hipotiroidismo,
+        neuropatia,
+        hepatite,
+        antecedentes_oncologicos,
+        cardiopatia,
+        hipertensao,
+        reumatismo,
+        hanseniase,
+        cirurgia_mmii,
+        marca_passo,
+        hipotensao,
+        comprometimento_vascular,
+        diabetes,
+        taxa_glicemica,
     });
 
     console.log("Dados pessoais criados:", form);
@@ -276,7 +312,7 @@ export const etapa1Post = async (req: Request, res: Response) => {
 
 export const submit = async (req: Request, res: Response) => {
 
-    const form = req.session.formData || {};
+    await DadosPessoais.create(formData);
 
     res.send("Formulário enviado com sucesso!");
 }

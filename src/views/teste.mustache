@@ -64,15 +64,15 @@
               <label for="sexo" class="form-label">Sexo:</label>
               <div class="d-flex">
                 <div class="form-check me-3">
-                  <input class="form-check-input" type="radio" name="sexo" id="sexoM">
+                  <input class="form-check-input" type="radio" name="sexo" id="sexoM" value="Masculino">
                   <label class="form-check-label" for="sexoM">Masculino</label>
                 </div>
                 <div class="form-check me-3">
-                  <input class="form-check-input" type="radio" name="sexo" id="sexoF">
+                  <input class="form-check-input" type="radio" name="sexo" id="sexoF" value="Feminino">
                   <label class="form-check-label" for="sexoF">Feminino</label>
                 </div>
                 <div class="form-check me-3">
-                  <input class="form-check-input" type="radio" name="sexo" id="sexoN">
+                  <input class="form-check-input" type="radio" name="sexo" id="sexoN" value="Prefiro não informar">
                   <label class="form-check-label" for="sexoN">Prefiro não informar</label>
                 </div>
               </div>
@@ -80,8 +80,8 @@
           </div>
           <br>
           <div class="mb-3">
-            <label for="profissao" class="form-label">Qual sua profissão:</label>
-            <input type="text" class="form-control" name="profissao" placeholder="Nome da profissão">
+            <label for="trabalho" class="form-label">Qual sua profissão:</label>
+            <input type="text" class="form-control" name="trabalho" placeholder="Nome da profissão">
           </div>
           <div class="d-flex justify-content-end">
             <button type="submit" class="btn btn-primary">Enviar</button>
@@ -89,6 +89,10 @@
         </div>
       </div>
     </div>
+
+
+<br>
+
 
     <!-- ETAPA 2: Dados Gerais -->
     <div id="etapa2" class="step">
@@ -98,11 +102,11 @@
           <div class="mb-3">
             <label for="podologo" class="form-label">Costuma ir ao podólogo?</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="podologo" id="sim">
+              <input class="form-check-input" type="radio" name="podologo" id="sim" value="Sim">
               <label class="form-check-label" for="sim">Sim</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="podologo" id="nao">
+              <input class="form-check-input" type="radio" name="podologo" id="nao" value="Não">
               <label class="form-check-label" for="nao">Não</label>
             </div>
             <label for="frequencia" class="form-label">Qual a frequência?</label>
@@ -117,11 +121,11 @@
           <div class="mb-3">
             <label for="alergico" class="form-label">Alérgico?</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="alergico" id="simAlergico">
+              <input class="form-check-input" type="radio" name="alergico" id="simAlergico" value="Sim">
               <label class="form-check-label" for="simAlergico">Sim</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="alergico" id="naoAlergico">
+              <input class="form-check-input" type="radio" name="alergico" id="naoAlergico" value="Não">
               <label class="form-check-label" for="naoAlergico">Não</label>
             </div>
             <label for="substancias" class="form-label">Quais substâncias?</label>
@@ -131,15 +135,15 @@
           <div class="mb-3">
             <label for="posicao" class="form-label">Posição de trabalho:</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="posicao" id="emPe">
+              <input class="form-check-input" type="radio" name="posicao" id="emPe" value="Em pé">
               <label class="form-check-label" for="emPe">Em pé</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="posicao" id="sentado">
+              <input class="form-check-input" type="radio" name="posicao" id="sentado" value="Sentado">
               <label class="form-check-label" for="sentado">Sentado</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="posicao" id="andando">
+              <input class="form-check-input" type="radio" name="posicao" id="andando" value="Andando">
               <label class="form-check-label" for="andando">Andando</label>
             </div>
             <label for="duracao" class="form-label">Duração:</label>
@@ -149,15 +153,15 @@
           <div class="mb-3">
             <label for="tempo_trabalho" class="form-label">Passa a maior parte do tempo:</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="tempo_trabalho" id="tempoEmPe">
+              <input class="form-check-input" type="radio" name="tempo_trabalho" id="tempoEmPe" value="Em pé">
               <label class="form-check-label" for="tempoEmPe">Em pé</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="tempo_trabalho" id="tempoSentado">
+              <input class="form-check-input" type="radio" name="tempo_trabalho" id="tempoSentado" value="Sentado">
               <label class="form-check-label" for="tempoSentado">Sentado</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="tempo_trabalho" id="tempoAndando">
+              <input class="form-check-input" type="radio" name="tempo_trabalho" id="tempoAndando" value="Andando">
               <label class="form-check-label" for="tempoAndando">Andando</label>
             </div>
           </div>
@@ -175,19 +179,19 @@
           <div class="mb-3">
             <label for="palmilha" class="form-label">Faz uso de palmilha?</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="palmilha" id="simPalmilha">
+              <input class="form-check-input" type="radio" name="palmilha" id="simPalmilha" value="Sim">
               <label class="form-check-label" for="simPalmilha">Sim</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="palmilha" id="naoPalmilha">
+              <input class="form-check-input" type="radio" name="palmilha" id="naoPalmilha" value="Não">
               <label class="form-check-label" for="naoPalmilha">Não</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="palmilhaOpcao" id="ortopedica">
+              <input class="form-check-input" type="radio" name="palmilhaOpcao" id="ortopedica" value="Ortopédica">
               <label class="form-check-label" for="ortopedica">Ortopédica</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="palmilhaOpcao" id="descanso">
+              <input class="form-check-input" type="radio" name="palmilhaOpcao" id="descanso" value="Descanso">
               <label class="form-check-label" for="descanso">Descanso</label>
             </div>
           </div>
@@ -195,11 +199,11 @@
           <div class="mb-3">
             <label for="fumante" class="form-label">É fumante?</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="fumante" id="simFumante">
+              <input class="form-check-input" type="radio" name="fumante" id="simFumante" value="Sim">
               <label class="form-check-label" for="simFumante">Sim</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="fumante" id="naoFumante">
+              <input class="form-check-input" type="radio" name="fumante" id="naoFumante" value="Não">
               <label class="form-check-label" for="naoFumante">Não</label>
             </div>
           </div>
@@ -207,11 +211,11 @@
           <div class="mb-3">
             <label for="menstrual" class="form-label">Ciclo menstrual em dia?</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="menstrual" id="simRegulado">
+              <input class="form-check-input" type="radio" name="menstrual" id="simRegulado" value="Sim">
               <label class="form-check-label" for="simRegulado">Sim</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="menstrual" id="naoRegulado">
+              <input class="form-check-input" type="radio" name="menstrual" id="naoRegulado" value="Não">
               <label class="form-check-label" for="naoRegulado">Não</label>
             </div>
             <label for="dum" class="form-label">DUM (Data da última menstruação):</label>
@@ -221,20 +225,20 @@
           <div class="mb-3">
             <label for="gestante" class="form-label">Está gestante?</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="gestante" id="simGestante">
+              <input class="form-check-input" type="radio" name="gestante" id="simGestante" value="Sim">
               <label class="form-check-label" for="simGestante">Sim</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="gestante" id="naoGestante">
+              <input class="form-check-input" type="radio" name="gestante" id="naoGestante" value="Não">
               <label class="form-check-label" for="naoGestante">Não</label>
             </div>
             <label for="amamentando" class="form-label">Está amamentando?</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="amamentando" id="simAmamentando">
+              <input class="form-check-input" type="radio" name="amamentando" id="simAmamentando" value="Sim">
               <label class="form-check-label" for="simAmamentando">Sim</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="amamentando" id="naoAmamentando">
+              <input class="form-check-input" type="radio" name="amamentando" id="naoAmamentando" value="Não">
               <label class="form-check-label" for="naoAmamentando">Não</label>
             </div>
           </div>
@@ -272,6 +276,10 @@
       </div>
     </div>
 
+
+
+
+
     <!-- ETAPA 3: Dados Clínicos -->
     <div id="etapa3" class="step">
       <div class="card">
@@ -279,80 +287,80 @@
         <div class="card-body">
           <div class="mb-4">
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="hipertiroidismo">
+              <input class="form-check-input" type="checkbox" id="hipertiroidismo" value="Sim">
               <label class="form-check-label" for="hipertiroidismo">Hipertirioidismo</label>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="renal">
+              <input class="form-check-input" type="checkbox" id="renal" value="Sim">
               <label class="form-check-label" for="renal">Renal</label>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="epilepsia">
+              <input class="form-check-input" type="checkbox" id="epilepsia" value="Sim">
               <label class="form-check-label" for="epilepsia">Epilepsia</label>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="quimioterapia_ou_radioterapia">
+              <input class="form-check-input" type="checkbox" id="quimioterapia_ou_radioterapia" value="Sim">
               <label class="form-check-label" for="quimioterapia_ou_radioterapia">Quimioterapia / Radioterapia</label>
             </div>
           </div>
           
           <div class="mb-4">
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="osteoporose">
+              <input class="form-check-input" type="checkbox" id="osteoporose" value="Sim">
               <label class="form-check-label" for="osteoporose">Osteoporose</label>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="hipotiroidismo">
+              <input class="form-check-input" type="checkbox" id="hipotiroidismo" value="Sim">
               <label class="form-check-label" for="hipotiroidismo">Hipotiroidismo</label>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="neuropatia">
+              <input class="form-check-input" type="checkbox" id="neuropatia" value="Sim">
               <label class="form-check-label" for="neuropatia">Neuropatia</label>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="hepatite">
+              <input class="form-check-input" type="checkbox" id="hepatite" value="Sim">
               <label class="form-check-label" for="hepatite">Hepatite</label>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="antecedentes_oncologicos">
+              <input class="form-check-input" type="checkbox" id="antecedentes_oncologicos" value="Sim">
               <label class="form-check-label" for="antecedentes_oncologicos">Antecedentes Oncológicos</label>
             </div>
           </div>
           
           <div class="mb-4">
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="cardiopatia">
+              <input class="form-check-input" type="checkbox" id="cardiopatia" value="Sim">
               <label class="form-check-label" for="cardiopatia">Cardiopatia</label>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="hipertensao">
+              <input class="form-check-input" type="checkbox" id="hipertensao" value="Sim">
               <label class="form-check-label" for="hipertensao">Hipertensão</label>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="reumatismo">
+              <input class="form-check-input" type="checkbox" id="reumatismo" value="Sim">
               <label class="form-check-label" for="reumatismo">Reumatismo</label>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="hanseniase">
+              <input class="form-check-input" type="checkbox" id="hanseniase" value="Sim">
               <label class="form-check-label" for="hanseniase">Hanseniase</label>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="cirurgia_mmii">
+              <input class="form-check-input" type="checkbox" id="cirurgia_mmii" value="Sim">
               <label class="form-check-label" for="cirurgia_mmii">Cirurgia MMII</label>
             </div>
           </div>
           
           <div class="mb-4">
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="marca_passo">
+              <input class="form-check-input" type="checkbox" id="marca_passo" value="Sim">
               <label class="form-check-label" for="marca_passo">Marca Passo</label>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="hipotensao_clinico">
+              <input class="form-check-input" type="checkbox" id="hipotensao_clinico" value="Sim">
               <label class="form-check-label" for="hipotensao_clinico">Hipotensão</label>
             </div>
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="comprometimento_vascular">
+              <input class="form-check-input" type="checkbox" id="comprometimento_vascular" value="Sim">
               <label class="form-check-label" for="comprometimento_vascular">Alterações ou Comprometimento Vasculares</label>
             </div>
           </div>
@@ -360,11 +368,11 @@
           <div class="mb-4">
             <label for="diabetes" class="form-label">Diabetes:</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="diabetes" id="simDiabetes">
+              <input class="form-check-input" type="radio" name="diabetes" id="simDiabetes" value="Sim">
               <label class="form-check-label" for="simDiabetes">Sim</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="diabetes" id="naoDiabetes">
+              <input class="form-check-input" type="radio" name="diabetes" id="naoDiabetes" value="Nao">
               <label class="form-check-label" for="naoDiabetes">Não</label>
             </div>
             <label for="taxa_glicemica" class="form-label">Taxa Glicêmica:</label>
@@ -376,19 +384,19 @@
           <div class="mb-4">
             <label for="insulina" class="form-label">Insulina:</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="insulina" id="simInsulina">
+              <input class="form-check-input" type="radio" name="insulina" id="simInsulina" value="Sim">
               <label class="form-check-label" for="simInsulina">Sim</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="insulina" id="naoInsulina">
+              <input class="form-check-input" type="radio" name="insulina" id="naoInsulina" value="Nao">
               <label class="form-check-label" for="naoInsulina">Não</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="insulina" id="injetavel">
+              <input class="form-check-input" type="radio" name="insulina" id="injetavel" value="Injetavel">
               <label class="form-check-label" for="injetavel">Injetável</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="insulina" id="viaOral">
+              <input class="form-check-input" type="radio" name="insulina" id="viaOral" value="viaOral">
               <label class="form-check-label" for="viaOral">Via Oral</label>
             </div>
           </div>
@@ -396,15 +404,15 @@
           <div class="mb-4">
             <label for="dieta_hidrica" class="form-label">Dieta Hídrica:</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="dietaHidrica" id="simDietaHidrica">
+              <input class="form-check-input" type="radio" name="dietaHidrica" id="simDietaHidrica" value="Sim">
               <label class="form-check-label" for="simDietaHidrica">Sim</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="dietaHidrica" id="naoDietaHidrica">
+              <input class="form-check-input" type="radio" name="dietaHidrica" id="naoDietaHidrica" value="Nao">
               <label class="form-check-label" for="naoDietaHidrica">Não</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="dietaHidrica" id="dietaAlimentar">
+              <input class="form-check-input" type="radio" name="dietaHidrica" id="dietaAlimentar" value="DietaAlimentar" >
               <label class="form-check-label" for="dietaAlimentar">Dieta Alimentar</label>
             </div>
           </div>
@@ -417,6 +425,10 @@
       </div>
     </div>
 
+
+
+
+
     <!-- ETAPA 4: Alterações e Lesões dos Pés -->
     <div id="etapa4" class="step">
       <div class="card position-relative">
@@ -427,66 +439,66 @@
           <div class="mb-3">
             <label for="dedo_flexivel" class="form-label">Flexível:</label>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="dedos" id="direitoFlex">
+              <input class="form-check-input" type="checkbox" name="dedos" id="direitoFlex" value="Sim">
               <label class="form-check-label" for="direitoFlex">Direito</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="dedos" id="esquerdoFlex">
+              <input class="form-check-input" type="checkbox" name="dedos" id="esquerdoFlex" value="Sim">
               <label class="form-check-label" for="esquerdoFlex">Esquerdo</label>
             </div>
           </div>
           <div class="mb-3">
             <label for="dedo_rigido" class="form-label">Rígido:</label>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="dedos" id="direitoRigido">
+              <input class="form-check-input" type="checkbox" name="dedos" id="direitoRigido" value="Sim">
               <label class="form-check-label" for="direitoRigido">Direito</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="dedos" id="esquerdoRigido">
+              <input class="form-check-input" type="checkbox" name="dedos" id="esquerdoRigido" value="Sim">
               <label class="form-check-label" for="esquerdoRigido">Esquerdo</label>
             </div>
           </div>
           <div class="mb-3">
             <label for="dedo_espalmado" class="form-label">Espalmado:</label>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="dedos" id="direitoEspalmado">
+              <input class="form-check-input" type="checkbox" name="dedos" id="direitoEspalmado" value="Sim">
               <label class="form-check-label" for="direitoEspalmado">Direito</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="dedos" id="esquerdoEspalmado">
+              <input class="form-check-input" type="checkbox" name="dedos" id="esquerdoEspalmado" value="Sim">
               <label class="form-check-label" for="esquerdoEspalmado">Esquerdo</label>
             </div>
           </div>
           <div class="mb-3">
             <label for="dedo_martelo" class="form-label">Martelo:</label>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="dedos" id="direitoMartelo">
+              <input class="form-check-input" type="checkbox" name="dedos" id="direitoMartelo" value="Sim">
               <label class="form-check-label" for="direitoMartelo">Direito</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="dedos" id="esquerdoMartelo">
+              <input class="form-check-input" type="checkbox" name="dedos" id="esquerdoMartelo" value="Sim">
               <label class="form-check-label" for="esquerdoMartelo">Esquerdo</label>
             </div>
           </div>
           <div class="mb-3">
             <label for="queda_metatarso" class="form-label">Queda de Metatarso:</label>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="dedos" id="direitoQM">
+              <input class="form-check-input" type="checkbox" name="dedos" id="direitoQM" value="Sim">
               <label class="form-check-label" for="direitoQM">Direito</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="dedos" id="esquerdoQM">
+              <input class="form-check-input" type="checkbox" name="dedos" id="esquerdoQM" value="Sim">
               <label class="form-check-label" for="esquerdoQM">Esquerdo</label>
             </div>
           </div>
           <div class="mb-3">
             <label for="tipo_marcha" class="form-label">Tipo de Marcha:</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="marcha" id="normalMarcha">
+              <input class="form-check-input" type="radio" name="marcha" id="normalMarcha" value="Normal">
               <label class="form-check-label" for="normalMarcha">Normal</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="marcha" id="patologicaMarcha">
+              <input class="form-check-input" type="radio" name="marcha" id="patologicaMarcha" value="Patológica">
               <label class="form-check-label" for="patologicaMarcha">Patológica</label>
             </div>
             <div class="col-md-3 d-flex align-items-center mt-2">
@@ -497,53 +509,53 @@
           <div class="mb-3">
             <label for="joelho" class="form-label">Joelho:</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="joelho" id="jnormal">
+              <input class="form-check-input" type="radio" name="joelho" id="jnormal" value="Normal">
               <label class="form-check-label" for="jnormal">Normal</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="joelho" id="valgo">
+              <input class="form-check-input" type="radio" name="joelho" id="valgo" value="Valgo">
               <label class="form-check-label" for="valgo">Valgo</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="joelho" id="varo">
+              <input class="form-check-input" type="radio" name="joelho" id="varo" value="Varo">
               <label class="form-check-label" for="varo">Varo</label>
             </div>
           </div>
           <div class="mb-3">
             <label for="articulacao" class="form-label">Articulação:</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="articulacao" id="retrope">
+              <input class="form-check-input" type="radio" name="articulacao" id="retrope" value="Retropé">
               <label class="form-check-label" for="retrope">Retropé</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="articulacao" id="chopart">
+              <input class="form-check-input" type="radio" name="articulacao" id="chopart" value="Chopart">
               <label class="form-check-label" for="chopart">Chopart</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="articulacao" id="mediope">
+              <input class="form-check-input" type="radio" name="articulacao" id="mediope" value="Mediopé">
               <label class="form-check-label" for="mediope">Mediopé</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="articulacao" id="lisfranc">
+              <input class="form-check-input" type="radio" name="articulacao" id="lisfranc" value="Lisfranc">
               <label class="form-check-label" for="lisfranc">Lisfranc</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="articulacao" id="antepe">
+              <input class="form-check-input" type="radio" name="articulacao" id="antepe" value="Antepé">
               <label class="form-check-label" for="antepe">Antepé</label>
             </div>
           </div>
           <div class="mb-3">
             <label for="sensibilidade_a_dor" class="form-label">Sensibilidade a dor:</label>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="sensibilidade" id="diminuida">
+              <input class="form-check-input" type="radio" name="sensibilidade" id="diminuida" value="Diminuída">
               <label class="form-check-label" for="diminuida">Diminuída</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="sensibilidade" id="Snormal">
+              <input class="form-check-input" type="radio" name="sensibilidade" id="Snormal" value="Normal">
               <label class="form-check-label" for="Snormal">Normal</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="sensibilidade" id="aumentada">
+              <input class="form-check-input" type="radio" name="sensibilidade" id="aumentada" value="Aumentada">
               <label class="form-check-label" for="aumentada">Aumentada</label>
             </div>
           </div>
@@ -554,6 +566,10 @@
         </div>
       </div>
     </div>
+
+
+
+
 
     <!-- ETAPA 5: Formato das Unhas e Artelhos -->
     <div id="etapa5" class="step">
@@ -576,35 +592,35 @@
               <tbody>
                 <tr>
                   <td>Involuta</td>
-                  <td><input type="radio" name="formato" value="involuta"></td>
+                  <td><input type="radio" name="formato" value="Sim"></td>
                 </tr>
                 <tr>
                   <td>Telha</td>
-                  <td><input type="radio" name="formato" value="telha"></td>
+                  <td><input type="radio" name="formato" value="Sim"></td>
                 </tr>
                 <tr>
                   <td>Funil</td>
-                  <td><input type="radio" name="formato" value="funil"></td>
+                  <td><input type="radio" name="formato" value="Sim"></td>
                 </tr>
                 <tr>
                   <td>Gancho</td>
-                  <td><input type="radio" name="formato" value="gancho"></td>
+                  <td><input type="radio" name="formato" value="Sim"></td>
                 </tr>
                 <tr>
                   <td>Caracol</td>
-                  <td><input type="radio" name="formato" value="caracol"></td>
+                  <td><input type="radio" name="formato" value="Sim"></td>
                 </tr>
                 <tr>
                   <td>Torquês</td>
-                  <td><input type="radio" name="formato" value="torques"></td>
+                  <td><input type="radio" name="formato" value="Sim"></td>
                 </tr>
                 <tr>
                   <td>Normal</td>
-                  <td><input type="radio" name="formato" value="normal"></td>
+                  <td><input type="radio" name="formato" value="Sim"></td>
                 </tr>
                 <tr>
                   <td>Cunha</td>
-                  <td><input type="radio" name="formato" value="cunha"></td>
+                  <td><input type="radio" name="formato" value="Sim"></td>
                 </tr>
               </tbody>
             </table>
@@ -612,39 +628,39 @@
               <label for="artelhos" class="form-label">Artelhos:</label>
               <div class="artelhos-container">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="onicoatrofia">
+                  <input class="form-check-input" type="checkbox" id="onicoatrofia" value="Sim">
                   <label class="form-check-label" for="onicoatrofia">Onicoatrofia</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="onicocriptose">
+                  <input class="form-check-input" type="checkbox" id="onicocriptose" value="Sim">
                   <label class="form-check-label" for="onicocriptose">Onicocriptose</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="onicorrexe">
+                  <input class="form-check-input" type="checkbox" id="onicorrexe" value="Sim">
                   <label class="form-check-label" for="onicorrexe">Onicorrexe</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="granuloma">
+                  <input class="form-check-input" type="checkbox" id="granuloma" value="Sim">
                   <label class="form-check-label" for="granuloma">Granuloma</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="onicogrifose">
+                  <input class="form-check-input" type="checkbox" id="onicogrifose" value="Sim">
                   <label class="form-check-label" for="onicogrifose">Onicogrifose</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="onicolise">
+                  <input class="form-check-input" type="checkbox" id="onicolise" value="Sim">
                   <label class="form-check-label" for="onicolise">Onicolise</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="onicofose">
+                  <input class="form-check-input" type="checkbox" id="onicofose" value="Sim">
                   <label class="form-check-label" for="onicofose">Onicofose</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="onicomicose">
+                  <input class="form-check-input" type="checkbox" id="onicomicose" value="Sim">
                   <label class="form-check-label" for="onicomicose">Onicomicose</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="psoriase_ungueal">
+                  <input class="form-check-input" type="checkbox" id="psoriase_ungueal" value="Sim">
                   <label class="form-check-label" for="psoriase_ungueal">Psoríase Ungueal</label>
                 </div>
               </div>
@@ -661,6 +677,10 @@
         </div>
       </div>
     </div>
+
+
+
+
 
 <!-- ETAPA 6: Alterações e Lesões -->
 <div id="etapa6" class="step">
