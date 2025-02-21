@@ -3,6 +3,7 @@
 import {Model, DataTypes} from 'sequelize'
 import {sequelize} from '../instances/mysql'
 import { timeStamp } from 'console'
+import { DadosClinicos } from './Dadosclinicos'
 
 export interface DadosPessoaisInstance extends Model {
     id_dados_pessoais: number
@@ -32,7 +33,13 @@ export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPesso
     },
     id_dados_clinicos: {
         type: DataTypes.INTEGER,
-        allowNull: true
+        allowNull: true,
+        references: {
+          model: DadosClinicos,
+          key: "id_dados_clinicos",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
     },
     nome: {
         type: DataTypes.STRING,
@@ -86,7 +93,7 @@ export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPesso
         type: DataTypes.CHAR(9),
         allowNull: true
     },
-    observacoes:{
+    observacoes_pessoais:{
         type: DataTypes.TEXT,
         allowNull: true
     }

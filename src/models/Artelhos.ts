@@ -60,7 +60,7 @@ export const Artelhos = sequelize.define<ArtelhosInstance>("Artelhos", {
         type: DataTypes.TINYINT,
         allowNull: true
     },
-    observacoes:{
+    observacoes_artelhos:{
         type: DataTypes.TEXT,
         allowNull: true
     }

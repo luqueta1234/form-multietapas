@@ -36,7 +36,7 @@ export const CotidianoPaciente = sequelize.define<CotidianoPacienteInstance>("Co
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       },
-    observacoes:{
+    observacoes_cotidiano:{
         type: DataTypes.TEXT,
         allowNull: true
     },

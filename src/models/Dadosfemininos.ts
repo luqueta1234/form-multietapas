@@ -19,15 +19,15 @@ export const DadosFemininos = sequelize.define<DadosFemininosInstance>("DadosFem
     },
     dum:{
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: true
     },
     amamentando:{
         type: DataTypes.ENUM("Sim", "Não"),
-        allowNull: false
+        allowNull: true
     },
     ciclo_menstrual_regular:{
         type: DataTypes.ENUM("Sim", "Não"),
-        allowNull: false
+        allowNull: true
     }
 },{
     tableName:'dados_femininos',

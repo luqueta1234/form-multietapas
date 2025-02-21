@@ -106,7 +106,7 @@ export interface AlteracoesLesoesInstance extends Model {
         type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
-      observacoes: {
+      observacoes_alteracoes: {
         type: DataTypes.TEXT,
         allowNull: true,
       } 

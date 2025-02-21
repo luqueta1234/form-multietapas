@@ -2,6 +2,9 @@
 
 import {Model, DataTypes} from 'sequelize'
 import {sequelize} from '../instances/mysql'
+import { DadosPessoais } from './Dadospessoais'
+import { FormatoUnha } from './Formatounha'
+import { AlteracoesLesoes } from './Alteracoeslesoes'
 
 export interface DescricaoPeInstance extends Model {
     id_descricao_pe_paciente: number
@@ -36,15 +39,33 @@ export const DescricaoPe = sequelize.define<DescricaoPeInstance>("DescricaoPe",{
     },
     id_dados_pessoais:{
         type: DataTypes.INTEGER,
-        allowNull: false
+                allowNull: true,
+                references: {
+                  model: DadosPessoais,
+                  key: "id_dados_pessoais",
+                },
+                onDelete: "CASCADE",
+                onUpdate: "CASCADE",
     },
     id_formato_unha:{
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: true,
+        references: {
+          model: FormatoUnha,
+          key: "id_formato_unha",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
     },
     id_alteracoes_lesoes:{
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: true,
+        references: {
+          model: AlteracoesLesoes,
+          key: "id_alteracoes_lesoes",
+        },
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
     },
     observacoes_pe:{
         type: DataTypes.TEXT,

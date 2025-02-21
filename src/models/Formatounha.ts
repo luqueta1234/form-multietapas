@@ -2,6 +2,7 @@
 
 import {Model, DataTypes} from 'sequelize'
 import {sequelize} from '../instances/mysql'
+import { Artelhos } from './Artelhos'
 
 export interface FormatoUnhaInstance extends Model {
     id_formato_unha: number
@@ -26,7 +27,13 @@ export const FormatoUnha = sequelize.define<FormatoUnhaInstance>("FormatoUnha", 
     },
     id_artelhos:{
         type: DataTypes.INTEGER,
-        allowNull: false
+                allowNull: true,
+                references: {
+                  model: Artelhos,
+                  key: "id_artelhos",
+                },
+                onDelete: "CASCADE",
+                onUpdate: "CASCADE",
     },
     involuta:{
         type: DataTypes.BOOLEAN,
@@ -60,7 +67,7 @@ export const FormatoUnha = sequelize.define<FormatoUnhaInstance>("FormatoUnha", 
         type: DataTypes.BOOLEAN,
         allowNull: true
     },
-    observacoes:{
+    observacoes_unhas:{
         type: DataTypes.TEXT,
         allowNull: true
     }

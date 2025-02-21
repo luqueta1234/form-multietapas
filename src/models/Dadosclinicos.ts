@@ -2,6 +2,7 @@
 
 import {Model, DataTypes} from 'sequelize'
 import {sequelize} from '../instances/mysql'
+import { DadosFemininos } from './Dadosfemininos'
 
 
 export interface DadosClinicosInstance extends Model {
@@ -46,11 +47,17 @@ export const DadosClinicos = sequelize.define<DadosClinicosInstance>("DadosClini
     },
     id_dados_femininos:{
         type: DataTypes.INTEGER,
-        allowNull: true
+                allowNull: true,
+                references: {
+                  model: DadosFemininos,
+                  key: "id_dados_femininos",
+                },
+                onDelete: "CASCADE",
+                onUpdate: "CASCADE",
     },
     saude:{
         type: DataTypes.TEXT,
-        allowNull: false
+        allowNull: true
     },
     medicamento:{
         type: DataTypes.TEXT,
@@ -144,7 +151,7 @@ export const DadosClinicos = sequelize.define<DadosClinicosInstance>("DadosClini
         type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
-    taxa_glemica:{
+    taxa_glicemica:{
         type: DataTypes.TEXT,
         allowNull: true
     },
