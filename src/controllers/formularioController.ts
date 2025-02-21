@@ -6,6 +6,7 @@ import { DadosPessoais } from "../models/Dadospessoais";
 import { DescricaoPe } from "../models/Descricaopepaciente";
 import { FormatoUnha } from "../models/Formatounha";
 import { Artelhos } from "../models/Artelhos";
+import session from "express-session";
 import { Request, Response } from "express";
 
 export const index = async (req: Request, res: Response) => {
@@ -141,6 +142,109 @@ export const etapa1Post = async (req: Request, res: Response) => {
             erisipela,
     } = req.body;
 
+    const formData: Record<string, any> = {};
+
+        formData.nome = nome;
+        formData.endereco = endereco;
+        formData.bairro = bairro;
+        formData.cidade = cidade;
+        formData.estado = estado;
+        formData.cep = cep;
+        formData.telefone_residencial = telefone_residencial;
+        formData.telefone_celular = telefone_celular;
+        formData.email = email;
+        formData.data_nascimento = data_nascimento;
+        formData.sexo = sexo;
+        formData.trabalho = trabalho;
+        formData.id_dados_pessoais = id_dados_pessoais;
+        formData.id_dados_femininos = id_dados_femininos;
+        formData.maior_tempo = maior_tempo;
+        formData.duracao = duracao;
+        formData.pratica_atividade_fisica = pratica_atividade_fisica;
+        formData.visita_podologo = visita_podologo;
+        formData.frequencia_podologo = frequencia_podologo;
+        formData.esporte = esporte;
+        formData.dum = dum;
+        formData.amamentando = amamentando;
+        formData.ciclo_menstrual_regular = ciclo_menstrual_regular;
+        formData.medicamento = medicamento;
+        formData.fumante = fumante;
+        formData.alergico = alergico;
+        formData.substancias = substancias;
+        formData.gestante = gestante;
+        formData.queixa = queixa;
+        formData.hipertirioidismo = hipertirioidismo;
+        formData.renal = renal;
+        formData.epilepsia = epilepsia;
+        formData.quimioterapia_ou_radioterapia = quimioterapia_ou_radioterapia;
+        formData.osteoporose = osteoporose;
+        formData.hipotiroidismo = hipotiroidismo;
+        formData.neuropatia = neuropatia;
+        formData.hepatite = hepatite;
+        formData.antecedentes_oncologicos = antecedentes_oncologicos;
+        formData.cardiopatia = cardiopatia;
+        formData.hipertensao = hipertensao;
+        formData.reumatismo = reumatismo;
+        formData.hanseniase = hanseniase;
+        formData.cirurgia_mmii = cirurgia_mmii;
+        formData.marca_passo = marca_passo;
+        formData.hipotensao = hipotensao;
+        formData.comprometimento_vascular = comprometimento_vascular;
+        formData.diabetes = diabetes;
+        formData.taxa_glicemica = taxa_glicemica;
+        formData.data_ultima_verificacao = data_ultima_verificacao;
+        formData.insulina = insulina;
+        formData.dieta_hidrica = dieta_hidrica;
+        formData.dedo_flexivel = dedo_flexivel;
+        formData.dedo_rigido = dedo_rigido;
+        formData.dedo_espalmado = dedo_espalmado;
+        formData.dedo_martelo = dedo_martelo;
+        formData.queda_metatarso = queda_metatarso;
+        formData.tipo_marcha = tipo_marcha;
+        formData.qual_tipo_marcha = qual_tipo_marcha;
+        formData.uso_palmilha = uso_palmilha;
+        formData.joelho = joelho;
+        formData.articulacao = articulacao;
+        formData.sensibilidade_a_dor = sensibilidade_a_dor;
+        formData.involuta = involuta;
+        formData.telha = telha;
+        formData.funil = funil;
+        formData.gancho = gancho;
+        formData.caracol = caracol;
+        formData.torques = torques;
+        formData.normal = normal;
+        formData.cunha = cunha;
+        formData.onicoatrofia = onicoatrofia;
+        formData.onicocriptose = onicocriptose;
+        formData.onicorrexe = onicorrexe;
+        formData.granuloma = granuloma;
+        formData.onicogrifose = onicogrifose;
+        formData.onicolise = onicolise;
+        formData.onicofose = onicofose;
+        formData.onicomicose = onicomicose;
+        formData.psoriase_ungueal = psoriase_ungueal;
+        formData.observacoes = observacoes;
+        formData.bromidrose = bromidrose;
+        formData.hidrose = hidrose;
+        formData.desidrose = desidrose;
+        formData.isquemia = isquemia;
+        formData.mal_perfurante = mal_perfurante;
+        formData.edema = edema;
+        formData.tinea = tinea;
+        formData.psoriase = psoriase;
+        formData.tungiase = tungiase;
+        formData.fissuras = fissuras;
+        formData.perfusao_pe_direito = perfusao_pe_direito;
+        formData.perfusao_pe_esquerdo = perfusao_pe_esquerdo;
+        formData.verruga_plantar = verruga_plantar;
+        formData.calo_dorsal = calo_dorsal;
+        formData.calo_plantar = calo_plantar;
+        formData.hiperqueratose = hiperqueratose;
+        formData.calo_interdigital = calo_interdigital;
+        formData.erisipela = erisipela;
+
+    // Aqui você pode armazenar o formData na sessão ou no banco de dados
+
     console.log("Dados recebidos no corpo da requisição:", req.body);
 
     const form = await DadosPessoais.create({
@@ -172,9 +276,7 @@ export const etapa1Post = async (req: Request, res: Response) => {
 
 export const submit = async (req: Request, res: Response) => {
 
-    const formData = req.session.formData || {};
-
-    await etapa1.create(formData);
+    const form = req.session.formData || {};
 
     res.send("Formulário enviado com sucesso!");
 }

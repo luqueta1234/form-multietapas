@@ -2,6 +2,7 @@ import express from 'express'
 import dotenv from 'dotenv'
 import mustache from 'mustache-express'
 import path from 'path'
+import session from 'express-session'
 //importando o index.ts
 import mainRoutes from './routes/index'
 
@@ -15,6 +16,14 @@ server.use(express.static(path.join(__dirname,'../public')))
 
 // Middleware para JSON
 server.use(express.json());
+
+// Criação da sessão
+server.use(session({
+    secret: "luke123987", // Troque por uma chave segura
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false } // Defina como `true` se estiver usando HTTPS
+}));
 
 //habilitar o POST (via body)
 server.use(express.urlencoded({extended:true}))
