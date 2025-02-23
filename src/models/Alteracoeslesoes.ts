@@ -5,23 +5,23 @@ import {sequelize} from '../instances/mysql'
 
 export interface AlteracoesLesoesInstance extends Model {
     id_alteracoes_lesoes: number
-    bromidrose: boolean
-    hidrose: boolean
-    desidrose: boolean
-    isquemia: boolean
-    mal_perfurante: boolean
-    edema: boolean
-    tinea: boolean
-    psoriase: boolean
-    tungiase: boolean
-    fissuras: boolean
+    bromidrose: "Sim" | "Não"
+    hidrose: "Sim" | "Não"
+    desidrose: "Sim" | "Não"
+    isquemia: "Sim" | "Não"
+    mal_perfurante: "Sim" | "Não"
+    edema: "Sim" | "Não"
+    tinea: "Sim" | "Não"
+    psoriase: "Sim" | "Não"
+    tungiase: "Sim" | "Não"
+    fissuras: "Sim" | "Não"
     perfusao_pe_direito: "Normal" | "Pálido" | "Cianótico"
     perfusao_pe_esquerdo: "Normal" | "Pálido" | "Cianótico"
-    verruga_plantar: boolean;
-    calo_dorsal: boolean
-    calo_plantar: boolean
-    hiperqueratose: boolean
-    calo_interdigital: boolean
+    verruga_plantar: "Sim" | "Não";
+    calo_dorsal: "Sim" | "Não"
+    calo_plantar: "Sim" | "Não"
+    hiperqueratose: "Sim" | "Não"
+    calo_interdigital: "Sim" | "Não"
     erisipela: "Sim" | "Não"
     observacoes: string
   }
@@ -35,43 +35,43 @@ export interface AlteracoesLesoesInstance extends Model {
         autoIncrement: true,
       },
       bromidrose: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
       hidrose: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
       desidrose: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
       isquemia: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
       mal_perfurante: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
       edema: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
       tinea: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
       psoriase: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
       tungiase: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
       fissuras: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
       perfusao_pe_direito: {
@@ -83,23 +83,23 @@ export interface AlteracoesLesoesInstance extends Model {
         allowNull: true,
       },
       verruga_plantar: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
       calo_dorsal: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
       calo_plantar: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
       hiperqueratose: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
       calo_interdigital: {
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
       erisipela: {

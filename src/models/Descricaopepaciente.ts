@@ -17,17 +17,21 @@ export interface DescricaoPeInstance extends Model {
     uso_palmilha: "Sim" | "Não" | "Ortopédica" | "Descanso"
     ncalcado: string
     tipocalcado: string
-    tipocalcadoesporte: string
-    dedo_flexivel: "Direito" | "Esquerdo"
-    dedo_rigido: "Direito" | "Esquerdo"
-    dedo_espalmado: "Direito" | "Esquerdo"
-    dedo_martelo: "Direito" | "Esquerdo"
-    queda_metatarso: "Direito" | "Esquerdo"
+    dedo_flexivelE: "Sim" | "Não"
+    dedo_rigidoE: "Sim" | "Não"
+    dedo_espalmadoE: "Sim" | "Não"
+    dedo_marteloE: "Sim" | "Não"
+    queda_metatarsoE: "Sim" | "Não"
+    dedo_flexivelD: "Sim" | "Não"
+    dedo_rigidoD: "Sim" | "Não"
+    dedo_espalmadoD: "Sim" | "Não"
+    dedo_marteloD: "Sim" | "Não"
+    queda_metatarsoD: "Sim" | "Não"
     tipo_marcha: "Normal" | "Patológica"
     qual_tipo_marcha: string
     joelho: "Normal" | "Valgo" | "Varo"
     articulacao: "Retropé" | "Chopart" | "Mediopé" | "Lisfranc" | "Antepé"
-    sensibilidade_a_dor: "Diminuída" | "Normal" | "Aumentada"
+    sensibilidade_dor: "Diminuída" | "Normal" | "Aumentada"
 }
 
 export const DescricaoPe = sequelize.define<DescricaoPeInstance>("DescricaoPe",{
@@ -91,28 +95,48 @@ export const DescricaoPe = sequelize.define<DescricaoPeInstance>("DescricaoPe",{
         type: DataTypes.STRING,
         allowNull: true
     },
-    tipocalcadoesporte:{
-        type: DataTypes.STRING,
+    dedo_flexivelE:{
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
-    dedo_flexivel:{
-        type: DataTypes.ENUM("Direito", "Esquerdo"),
+    dedo_rigidoE:{
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
-    dedo_rigido:{
-        type: DataTypes.ENUM("Direito", "Esquerdo"),
+    dedo_espalmadoE:{
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
-    dedo_espalmado:{
-        type: DataTypes.ENUM("Direito", "Esquerdo"),
+    dedo_marteloE:{
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
-    dedo_martelo:{
-        type: DataTypes.ENUM("Direito", "Esquerdo"),
+    queda_metatarsoE:{
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
-    queda_metatarso:{
-        type: DataTypes.ENUM("Direito", "Esquerdo"),
+    dedo_flexivelD:{
+        type: DataTypes.ENUM("Sim", "Não"),
+        allowNull: true
+    },
+    dedo_rigidoD:{
+        type: DataTypes.ENUM("Sim", "Não"),
+        allowNull: true
+    },
+    dedo_espalmadoD:{
+        type: DataTypes.ENUM("Sim", "Não"),
+        allowNull: true
+    },
+    dedo_marteloD:{
+        type: DataTypes.ENUM("Sim", "Não"),
+        allowNull: true
+    },
+    queda_metatarsoD:{
+        type: DataTypes.ENUM("Sim", "Não"),
+        allowNull: true
+    },
+    tipo_marcha:{
+        type: DataTypes.ENUM("Normal", "Patológica"),
         allowNull: true
     },
     qual_tipo_marcha:{
@@ -127,7 +151,7 @@ export const DescricaoPe = sequelize.define<DescricaoPeInstance>("DescricaoPe",{
         type: DataTypes.ENUM("Retropé", "Chopart", "Mediopé", "Lisfranc", "Antepé"),
         allowNull: true
     },
-    sensibilidade_a_dor:{
+    sensibilidade_dor:{
         type: DataTypes.ENUM("Diminuída", "Normal", "Aumentada"),
         allowNull: true
     }

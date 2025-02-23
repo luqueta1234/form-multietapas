@@ -13,7 +13,7 @@ export interface CotidianoPacienteInstance extends Model{
     posicao_trabalho: "Em pé" | "Sentado" | "Andando"
     duracao: string
     pratica_atividade_fisica: "Sim" | "Não"
-    frequencia_atividadefisica: string
+    frequencia_atividade_fisica: string
     visita_podologo: "Sim" | "Não"
     frequencia_podologo: string
     esporte: string
@@ -56,7 +56,7 @@ export const CotidianoPaciente = sequelize.define<CotidianoPacienteInstance>("Co
         type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
-    frequencia_atividadefisica:{
+    frequencia_atividade_fisica:{
         type: DataTypes.TEXT,
         allowNull: true
     },
@@ -80,15 +80,5 @@ export const CotidianoPaciente = sequelize.define<CotidianoPacienteInstance>("Co
     tableName:'cotidiano_paciente',
     timestamps: false
 })
-
-CotidianoPaciente.belongsTo(DadosPessoais, {
-    foreignKey: "id_dados_pessoais",
-    as: "dadosPessoais"
-});
-
-DadosPessoais.hasOne(CotidianoPaciente, {
-    foreignKey: "id_dados_pessoais",
-    as: "cotidianoPaciente"
-});
 
 export default DadosPessoais;

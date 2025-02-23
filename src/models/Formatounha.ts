@@ -7,14 +7,14 @@ import { Artelhos } from './Artelhos'
 export interface FormatoUnhaInstance extends Model {
     id_formato_unha: number
     id_artelhos: number
-    involuta: boolean
-    telha: boolean
-    funil: boolean
-    gancho: boolean
-    caracol: boolean
-    torques: boolean
-    normal: boolean
-    cunha: boolean
+    involuta: "Sim" | "Não"
+    telha: "Sim" | "Não"
+    funil: "Sim" | "Não"
+    gancho: "Sim" | "Não"
+    caracol: "Sim" | "Não"
+    torques: "Sim" | "Não"
+    normal: "Sim" | "Não"
+    cunha: "Sim" | "Não"
     observacoes: string
 }
 
@@ -36,35 +36,35 @@ export const FormatoUnha = sequelize.define<FormatoUnhaInstance>("FormatoUnha", 
                 onUpdate: "CASCADE",
     },
     involuta:{
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     telha:{
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     funil:{
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     gancho:{
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     caracol:{
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     torques:{
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     normal:{
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     cunha:{
-        type: DataTypes.BOOLEAN,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     observacoes_unhas:{

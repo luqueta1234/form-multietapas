@@ -66,11 +66,16 @@ let formData: {
     data_ultima_verificacao?: Date;
     insulina?: 'Sim' | 'Não' | 'Injetável' | 'Via Oral';
     dieta_hidrica?: 'Sim' | 'Não' | 'Dieta Alimentar';
-    dedo_flexivel?: 'Direito' | 'Esquerdo';
-    dedo_rigido?: 'Direito' | 'Esquerdo';
-    dedo_espalmado?: 'Direito' | 'Esquerdo';
-    dedo_martelo?: 'Direito' | 'Esquerdo';
-    queda_metatarso?: 'Direito' | 'Esquerdo';
+    dedo_flexivelE?: 'Sim' | 'Não';
+    dedo_rigidoE?: 'Sim' | 'Não';
+    dedo_espalmadoE?: 'Sim' | 'Não';
+    dedo_marteloE?: 'Sim' | 'Não';
+    queda_metatarsoE?: 'Sim' | 'Não';
+    dedo_flexivelD?: 'Sim' | 'Não';
+    dedo_rigidoD?: 'Sim' | 'Não';
+    dedo_espalmadoD?: 'Sim' | 'Não';
+    dedo_marteloD?: 'Sim' | 'Não';
+    queda_metatarsoD?: 'Sim' | 'Não';
     tipo_marcha?: 'Normal' | 'Patológica';
     qual_tipo_marcha?: string;
     joelho?: 'Normal' | 'Valgo' | 'Varo';
@@ -133,11 +138,11 @@ export const etapa1Post = async (req: Request, res: Response) => {
             renal, epilepsia, quimioterapia_ou_radioterapia, osteoporose, hipotiroidismo,
             neuropatia, hepatite, antecedentes_oncologicos, cardiopatia, hipertensao, reumatismo, hanseniase,
             cirurgia_mmii,  marca_passo, hipotensao, comprometimento_vascular, diabetes, taxa_glicemica,
-            data_ultima_verificacao, insulina,  dieta_hidrica, dedo_flexivel,dedo_rigido, dedo_espalmado, 
-            dedo_martelo, queda_metatarso, tipo_marcha, qual_tipo_marcha, uso_palmilha,
-            joelho, articulacao, sensibilidade_a_dor, involuta, telha, funil, gancho, caracol, torques, normal, cunha, 
+            data_ultima_verificacao, insulina,  dieta_hidrica, dedo_flexivelE ,dedo_rigidoE, dedo_espalmadoE, 
+            dedo_marteloE, queda_metatarsoE, dedo_flexivelD, dedo_rigidoD, dedo_espalmadoD, dedo_marteloD, queda_metatarsoD, tipo_marcha, qual_tipo_marcha, uso_palmilha,
+            joelho, articulacao, sensibilidade_dor, involuta, telha, funil, gancho, caracol, torques, normal, cunha, 
             onicoatrofia, onicocriptose, onicorrexe, granuloma, onicogrifose, onicolise,
-            posicao_trabalho, frequencia_atividadefisica, ncalcado, tipocalcado, tipocalcadoesporte,
+            posicao_trabalho, frequencia_atividade_fisica, ncalcado, tipocalcado,
             onicofose, onicomicose, psoriase_ungueal, observacoes_cotidiano, observacoes_artelhos, observacoes_pe, observacoes_dedos,
             observacoes_unhas, observacoes_alteracoes, observacoes_pessoais, bromidrose, hidrose, desidrose, isquemia, mal_perfurante, edema,
             tinea, psoriase, tungiase, fissuras, perfusao_pe_direito, perfusao_pe_esquerdo,
@@ -193,7 +198,7 @@ export const etapa1Post = async (req: Request, res: Response) => {
         formData.neuropatia = neuropatia;
         formData.hepatite = hepatite;
         formData.posicao_trabalho = posicao_trabalho;
-        formData.frequencia_atividadefisica = frequencia_atividadefisica;
+        formData.frequencia_atividade_fisica = frequencia_atividade_fisica;
         formData.antecedentes_oncologicos = antecedentes_oncologicos;
         formData.cardiopatia = cardiopatia;
         formData.hipertensao = hipertensao;
@@ -208,19 +213,23 @@ export const etapa1Post = async (req: Request, res: Response) => {
         formData.data_ultima_verificacao = data_ultima_verificacao;
         formData.insulina = insulina;
         formData.dieta_hidrica = dieta_hidrica;
-        formData.dedo_flexivel = dedo_flexivel;
-        formData.dedo_rigido = dedo_rigido;
-        formData.dedo_espalmado = dedo_espalmado;
-        formData.dedo_martelo = dedo_martelo;
-        formData.queda_metatarso = queda_metatarso;
+        formData.dedo_flexivelE = dedo_flexivelE;
+        formData.dedo_rigidoE = dedo_rigidoE;
+        formData.dedo_espalmadoE = dedo_espalmadoE;
+        formData.dedo_marteloE = dedo_marteloE;
+        formData.queda_metatarsoE = queda_metatarsoE; 
+        formData.dedo_flexivelD = dedo_flexivelD;
+        formData.dedo_rigidoD = dedo_rigidoD;
+        formData.dedo_espalmadoD = dedo_espalmadoD;
+        formData.dedo_marteloD = dedo_marteloD;
+        formData.queda_metatarsoD = queda_metatarsoD;
         formData.tipo_marcha = tipo_marcha;
         formData.qual_tipo_marcha = qual_tipo_marcha;
         formData.uso_palmilha = uso_palmilha;
         formData.joelho = joelho;
         formData.tipocalcado = tipocalcado;
-        formData.tipocalcadoesporte = tipocalcadoesporte;
         formData.articulacao = articulacao;
-        formData.sensibilidade_a_dor = sensibilidade_a_dor;
+        formData.sensibilidade_dor = sensibilidade_dor;
         formData.involuta = involuta;
         formData.telha = telha;
         formData.funil = funil;
@@ -285,7 +294,7 @@ export const etapa1Post = async (req: Request, res: Response) => {
         observacoes_pessoais,
     });
 
-    await CotidianoPaciente.create({
+    const form2 = await CotidianoPaciente.create({
         id_cotidiano_paciente,
         id_dados_pessoais,
         observacoes_cotidiano,
@@ -293,23 +302,24 @@ export const etapa1Post = async (req: Request, res: Response) => {
         posicao_trabalho,
         duracao,
         pratica_atividade_fisica,
-        frequencia_atividadefisica,
+        frequencia_atividade_fisica,
         frequencia_podologo,
         visita_podologo,
         esporte,
         queixa,
     });
 
-    await DadosFemininos.create({
+    const form3 = await DadosFemininos.create({
         id_dados_femininos,
         dum,
         amamentando,
         ciclo_menstrual_regular,
     });
 
-    await DadosClinicos.create({
+    const form4 = await DadosClinicos.create({
         id_dados_clinicos,
         id_dados_femininos,
+        id_dados_pessoais,
         medicamento,
         fumante,
         alergico,
@@ -339,7 +349,7 @@ export const etapa1Post = async (req: Request, res: Response) => {
         dieta_hidrica,
     });
 
-    await DescricaoPe.create({
+    const form5 = await DescricaoPe.create({
         id_descricao_pe_paciente,
         id_dados_pessoais,
         id_formato_unha,
@@ -350,19 +360,24 @@ export const etapa1Post = async (req: Request, res: Response) => {
         uso_palmilha,
         ncalcado,
         tipocalcado,
-        tipocalcadoesporte,
-        dedo_flexivel,
-        dedo_rigido,
-        dedo_espalmado,
-        dedo_martelo,
-        queda_metatarso,
+        dedo_flexivelE,
+        dedo_rigidoE,
+        dedo_espalmadoE,
+        dedo_marteloE,
+        queda_metatarsoE,
+        dedo_flexivelD,
+        dedo_rigidoD,
+        dedo_espalmadoD,
+        dedo_marteloD,
+        queda_metatarsoD,
+        tipo_marcha,
         qual_tipo_marcha,
         joelho,
         articulacao,
-        sensibilidade_a_dor,
+        sensibilidade_dor,
     });
 
-    await AlteracoesLesoes.create({
+    const form6 = await AlteracoesLesoes.create({
         id_alteracoes_lesoes,
         bromidrose,
         hidrose,
@@ -385,7 +400,7 @@ export const etapa1Post = async (req: Request, res: Response) => {
         observacoes_alteracoes,
     });
 
-    await Artelhos.create({
+    const form7 = await Artelhos.create({
         id_artelhos,
         onicoatrofia,
         onicocriptose,
@@ -394,11 +409,12 @@ export const etapa1Post = async (req: Request, res: Response) => {
         onicogrifose,
         onicolise,
         onicomicose,
+        onicofose,
         psoriase_ungueal,
         observacoes_artelhos,
     });
 
-    await FormatoUnha.create({
+    const form8 = await FormatoUnha.create({
         id_formato_unha,
         id_artelhos,
         involuta,
@@ -412,7 +428,7 @@ export const etapa1Post = async (req: Request, res: Response) => {
         observacoes_unhas,
     });
 
-    console.log("Dados pessoais criados:", form);
+    console.log("Dados criados:", form, form2, form3, form4, form5, form6, form7, form8);
 
     res.redirect(`/teste/${form.id_dados_pessoais}`)
 

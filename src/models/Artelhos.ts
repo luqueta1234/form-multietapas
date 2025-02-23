@@ -5,15 +5,15 @@ import {sequelize} from '../instances/mysql'
 
 export interface ArtelhosInstance extends Model {
     id_artelhos: number
-    onicoatrofia: boolean
-    onicocriptose: boolean
-    onicorrexe: boolean
-    granuloma: boolean
-    onicogrifose: boolean
-    onicolise: boolean
-    onicofose: boolean
-    onicomicose: boolean
-    psoriase_ungueal: boolean
+    onicoatrofia: "Sim" | "Não"
+    onicocriptose: "Sim" | "Não"
+    onicorrexe: "Sim" | "Não"
+    granuloma: "Sim" | "Não"
+    onicogrifose: "Sim" | "Não"
+    onicolise: "Sim" | "Não"
+    onicofose: "Sim" | "Não"
+    onicomicose: "Sim" | "Não"
+    psoriase_ungueal: "Sim" | "Não"
     observacoes: string
 }
 
@@ -25,39 +25,39 @@ export const Artelhos = sequelize.define<ArtelhosInstance>("Artelhos", {
         autoIncrement: true
     },
     onicoatrofia:{
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     onicocriptose:{
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     onicorrexe:{
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     granuloma:{
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     onicogrifose:{
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     onicolise:{
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     onicofose:{
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     onicomicose:{
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     psoriase_ungueal:{
-        type: DataTypes.TINYINT,
+        type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
     observacoes_artelhos:{

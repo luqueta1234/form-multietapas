@@ -7,8 +7,6 @@ import { DadosClinicos } from './Dadosclinicos'
 
 export interface DadosPessoaisInstance extends Model {
     id_dados_pessoais: number
-    id_dados_gerais: number
-    id_dados_clinicos: number
     nome: string
     sexo: "Masculino" | "Feminino" | "Prefiro não informar"
     email: string
@@ -30,16 +28,6 @@ export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPesso
         primaryKey: true,
         allowNull: false,
         autoIncrement: true
-    },
-    id_dados_clinicos: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        references: {
-          model: DadosClinicos,
-          key: "id_dados_clinicos",
-        },
-        onDelete: "CASCADE",
-        onUpdate: "CASCADE",
     },
     nome: {
         type: DataTypes.STRING,
@@ -78,7 +66,7 @@ export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPesso
         allowNull: true
     },
     cep:{
-        type: DataTypes.CHAR(8),
+        type: DataTypes.STRING,
         allowNull: true
     },
     rg:{
@@ -86,11 +74,11 @@ export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPesso
         allowNull: true
     },
     telefone_residencial:{
-        type: DataTypes.CHAR(8),
+        type: DataTypes.STRING,
         allowNull: true
     },
     telefone_celular:{
-        type: DataTypes.CHAR(9),
+        type: DataTypes.STRING,
         allowNull: true
     },
     observacoes_pessoais:{
