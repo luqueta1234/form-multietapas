@@ -164,7 +164,8 @@ export const DadosClinicos = sequelize.define<DadosClinicosInstance>("DadosClini
     },
     data_ultima_verificacao:{
         type: DataTypes.TEXT,
-        allowNull: true
+        allowNull: true,
+        defaultValue: "0000-00-00"
     },
     insulina:{
         type: DataTypes.ENUM("Sim", "Não", "Injetável", "Via Oral"),

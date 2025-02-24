@@ -8,7 +8,6 @@ export interface CotidianoPacienteInstance extends Model{
     id_cotidiano_paciente: number
     id_dados_pessoais: number
     trabalho: string
-    observacoes: string
     maior_tempo: "Em pé" | "Sentado" | "Andando"
     posicao_trabalho: "Em pé" | "Sentado" | "Andando"
     duracao: string
@@ -36,10 +35,6 @@ export const CotidianoPaciente = sequelize.define<CotidianoPacienteInstance>("Co
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
       },
-    observacoes_cotidiano:{
-        type: DataTypes.TEXT,
-        allowNull: true
-    },
     maior_tempo:{
         type: DataTypes.ENUM("Em pé", "Sentado", "Andando"),
         allowNull: true

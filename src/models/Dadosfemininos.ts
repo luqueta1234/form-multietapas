@@ -19,7 +19,8 @@ export const DadosFemininos = sequelize.define<DadosFemininosInstance>("DadosFem
     },
     dum:{
         type: DataTypes.DATE,
-        allowNull: true
+        allowNull: true,
+        defaultValue: "0000-00-00"
     },
     amamentando:{
         type: DataTypes.ENUM("Sim", "Não"),
