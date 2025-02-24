@@ -294,9 +294,11 @@ export const etapa1Post = async (req: Request, res: Response) => {
         observacoes_pessoais,
     });
 
+    const idDadoPessoal = form.id_dados_pessoais;
+
     const form2 = await CotidianoPaciente.create({
         id_cotidiano_paciente,
-        id_dados_pessoais,
+        id_dados_pessoais: idDadoPessoal,
         observacoes_cotidiano,
         maior_tempo,
         posicao_trabalho,
@@ -315,11 +317,13 @@ export const etapa1Post = async (req: Request, res: Response) => {
         amamentando,
         ciclo_menstrual_regular,
     });
+  
+    const idDadoFeminino = form3.id_dados_femininos;
 
     const form4 = await DadosClinicos.create({
         id_dados_clinicos,
-        id_dados_femininos,
-        id_dados_pessoais,
+        id_dados_femininos: idDadoFeminino,
+        id_dados_pessoais: idDadoPessoal,
         medicamento,
         fumante,
         alergico,
@@ -349,10 +353,67 @@ export const etapa1Post = async (req: Request, res: Response) => {
         dieta_hidrica,
     });
 
-    const form5 = await DescricaoPe.create({
-        id_descricao_pe_paciente,
-        id_dados_pessoais,
+    const form5 = await AlteracoesLesoes.create({
+        id_alteracoes_lesoes,
+        bromidrose,
+        hidrose,
+        desidrose,
+        isquemia,
+        mal_perfurante,
+        edema,
+        tinea,
+        psoriase,
+        tungiase,
+        fissuras,
+        perfusao_pe_direito,
+        perfusao_pe_esquerdo,
+        verruga_plantar,
+        calo_dorsal,
+        calo_plantar,
+        calo_interdigital,
+        hiperqueratose,
+        erisipela,
+        observacoes_alteracoes,
+    });
+
+    const idLesoes = form5.id_alteracoes_lesoes;
+    
+    const form6 = await Artelhos.create({
+        id_artelhos,
+        onicoatrofia,
+        onicocriptose,
+        onicorrexe,
+        granuloma,
+        onicogrifose,
+        onicolise,
+        onicomicose,
+        onicofose,
+        psoriase_ungueal,
+        observacoes_artelhos,
+    });
+
+    const idArtelho = form6.id_artelhos;
+
+    const form7 = await FormatoUnha.create({
         id_formato_unha,
+        id_artelhos: idArtelho,
+        involuta,
+        telha,
+        funil,
+        gancho,
+        caracol,
+        torques,
+        normal,
+        cunha,
+        observacoes_unhas,
+    });
+
+    const idUnha = form7.id_formato_unha;
+
+    const form8 = await DescricaoPe.create({
+        id_descricao_pe_paciente,
+        id_dados_pessoais: idDadoPessoal,
+        id_formato_unha: idUnha,
         id_alteracoes_lesoes,
         observacoes_pe,
         observacoes_dedos,
@@ -377,56 +438,7 @@ export const etapa1Post = async (req: Request, res: Response) => {
         sensibilidade_dor,
     });
 
-    const form6 = await AlteracoesLesoes.create({
-        id_alteracoes_lesoes,
-        bromidrose,
-        hidrose,
-        desidrose,
-        isquemia,
-        mal_perfurante,
-        edema,
-        tinea,
-        psoriase,
-        tungiase,
-        fissuras,
-        perfusao_pe_direito,
-        perfusao_pe_esquerdo,
-        verruga_plantar,
-        calo_dorsal,
-        calo_plantar,
-        calo_interdigital,
-        hiperqueratose,
-        erisipela,
-        observacoes_alteracoes,
-    });
-
-    const form7 = await Artelhos.create({
-        id_artelhos,
-        onicoatrofia,
-        onicocriptose,
-        onicorrexe,
-        granuloma,
-        onicogrifose,
-        onicolise,
-        onicomicose,
-        onicofose,
-        psoriase_ungueal,
-        observacoes_artelhos,
-    });
-
-    const form8 = await FormatoUnha.create({
-        id_formato_unha,
-        id_artelhos,
-        involuta,
-        telha,
-        funil,
-        gancho,
-        caracol,
-        torques,
-        normal,
-        cunha,
-        observacoes_unhas,
-    });
+    
 
     console.log("Dados criados:", form, form2, form3, form4, form5, form6, form7, form8);
 
