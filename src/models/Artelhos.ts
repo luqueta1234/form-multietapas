@@ -14,7 +14,6 @@ export interface ArtelhosInstance extends Model {
     onicofose: "Sim" | "Não"
     onicomicose: "Sim" | "Não"
     psoriase_ungueal: "Sim" | "Não"
-    observacoes: string
 }
 
 export const Artelhos = sequelize.define<ArtelhosInstance>("Artelhos", {
@@ -60,10 +59,6 @@ export const Artelhos = sequelize.define<ArtelhosInstance>("Artelhos", {
         type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
-    observacoes_artelhos:{
-        type: DataTypes.TEXT,
-        allowNull: true
-    }
 },{
     tableName:'artelhos',
     timestamps: false

@@ -291,7 +291,6 @@ export const etapa1Post = async (req: Request, res: Response) => {
         data_nascimento,
         sexo,
         trabalho,
-        observacoes_pessoais,
     });
 
     const idDadoPessoal = form.id_dados_pessoais;
@@ -373,7 +372,6 @@ export const etapa1Post = async (req: Request, res: Response) => {
         calo_interdigital,
         hiperqueratose,
         erisipela,
-        observacoes_alteracoes,
     });
 
     const idLesoes = form5.id_alteracoes_lesoes;
@@ -389,7 +387,6 @@ export const etapa1Post = async (req: Request, res: Response) => {
         onicomicose,
         onicofose,
         psoriase_ungueal,
-        observacoes_artelhos,
     });
 
     const idArtelho = form6.id_artelhos;
@@ -405,7 +402,6 @@ export const etapa1Post = async (req: Request, res: Response) => {
         torques,
         normal,
         cunha,
-        observacoes_unhas,
     });
 
     const idUnha = form7.id_formato_unha;
@@ -414,10 +410,7 @@ export const etapa1Post = async (req: Request, res: Response) => {
         id_descricao_pe_paciente,
         id_dados_pessoais: idDadoPessoal,
         id_formato_unha: idUnha,
-        id_alteracoes_lesoes,
-        observacoes_pe,
-        observacoes_dedos,
-        lesoes,
+        id_alteracoes_lesoes: idLesoes,
         uso_palmilha,
         ncalcado,
         tipocalcado,

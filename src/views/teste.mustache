@@ -116,6 +116,7 @@
             <div class="form-check">
               <input class="form-check-input" type="radio" name="visita_podologo" id="nao" value="Não">
               <label class="form-check-label" for="nao">Não</label>
+              <br>
             </div>
             <label for="frequencia" class="form-label">Qual a frequência?</label>
             <input type="text" class="form-control" name="frequencia_podologo" id="frequencia_podologo" placeholder="Informe a frequência">
@@ -136,6 +137,7 @@
               <input class="form-check-input" type="radio" name="alergico" id="naoAlergico" value="Não">
               <label class="form-check-label" for="naoAlergico">Não</label>
             </div>
+            <br>
             <label for="substancias" class="form-label">Quais substâncias?</label>
             <input type="text" class="form-control" name="substancias" id="substancias" placeholder="Informe a(s) substâncias">
           </div>
@@ -181,7 +183,7 @@
 
           <div class="mb-3">
             <label for="tipoCalcado" class="form-label">Tipo de calçado diário:</label>
-            <input type="text" class="form-control" name="tipo_calcado" id="tipo_calcado" placeholder="Tipo do Calçado">
+            <input type="text" class="form-control" name="tipocalcado" id="tipocalcado" placeholder="Tipo do Calçado">
           </div>
 
           <div class="mb-3">
@@ -225,6 +227,7 @@
             <div class="form-check">
               <input class="form-check-input" type="radio" name="ciclo_menstrual_regular" id="naoRegulado" value="Não">
               <label class="form-check-label" for="naoRegulado">Não</label>
+              <br>
             </div>
             <label for="dum" class="form-label">DUM (Data da última menstruação):</label>
             <input type="date" class="form-control" name="dum" id="dum">
@@ -438,7 +441,8 @@
         <div class="card-header fs-4">DESCRIÇÃO DO PÉ</div>
         <div class="card-body">
           <label class="fs-4" for="DEDOS">DEDOS:</label>
-          <img src="/public/images/TiposDePisadas.jpg" alt="Tipos de Pisadas" class="img-thumbnail position-absolute">
+          <br>
+          <img src="/images/TiposDePisadas.jpg" alt="Tipos de Pisadas" class="img-thumbnail position-absolute">
           <div class="mb-3">
             <label for="dedo_flexivel" class="form-label">Flexível:</label>
             <div class="form-check">
@@ -504,6 +508,7 @@
               <input class="form-check-input" type="radio" name="tipo_marcha" id="patologicaMarcha" value="Patológica">
               <label class="form-check-label" for="patologicaMarcha">Patológica</label>
             </div>
+            <br>
             <div class="col-md-3 d-flex align-items-center mt-2">
               <label for="qual_tipo_marcha" class="form-label me-2">Qual?</label>
               <input type="text" class="form-control" name="qual_tipo_marcha" id="qual_tipo_marcha" placeholder="Tipo de marcha">
@@ -578,7 +583,7 @@
         <div class="card-header text-center fs-4">Formato das Unhas e Artelhos</div>
         <div class="card-body text-center">
           <div class="unhas-imagem mb-3">
-            <img src="/public/images/FormatoDaUnha3.png" alt="Formato das Unhas" class="img-fluid">
+            <img src="/images/FormatoDaUnha3.png" alt="Formato das Unhas" class="img-fluid">
           </div>
         </div>
         <div class="card-body">
@@ -685,95 +690,115 @@
       <div class="card-header" style="font-size: 1.5rem;">Alterações e Lesões</div>
       <div class="card-body">
           <div class="form-group mb-3">
-            <label>
-              <input type="checkbox" name="bromidrose" value="Sim"> Bromidrose
-            </label>
-            <label>
-              <input type="checkbox" name="hidrose" value="Sim"> Hidrose
-            </label>
-            <label>
-              <input type="checkbox" name="desidrose" value="Sim"> Desidrose
-            </label>
-            <label>
-              <input type="checkbox" name="isquemia" value="Sim"> Isquemia
-            </label>
-            <label>
-              <input type="checkbox" name="mal_perfurante" value="Sim"> Mal Perfurante
-            </label>
-            <label>
-              <input type="checkbox" name="edema" value="Sim"> Edema
-            </label>
-            <label>
-              <input type="checkbox" name="tinea" value="Sim"> Tinea
-            </label>
-            <label>
-              <input type="checkbox" name="psoriase" value="Sim"> Psoríase
-            </label>
-            <label>
-              <input type="checkbox" name="tungiase" value="Sim"> Tungíase
-            </label>
-            <label>
-              <input type="checkbox" name="fissuras" value="Sim"> Fissuras
-            </label>
+            <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="bromidrose" value="Sim">
+                  <label class="form-check-label" for="bromidrose">Bromidrose</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="hidrose" value="Sim">
+                  <label class="form-check-label" for="hidrose">Hidrose</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="desidrose" value="Sim">
+                  <label class="form-check-label" for="desidrose">Desidrose</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="Isquemia" value="Sim">
+                  <label class="form-check-label" for="isquemia">Isquemia</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="mal_perfurante" value="Sim">
+                  <label class="form-check-label" for="mal_perfurante">Mal Perfurante</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="edema" value="Sim">
+                  <label class="form-check-label" for="edema">Edema</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="tinea" value="Sim">
+                  <label class="form-check-label" for="tinea">Tinea</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="psoriase" value="Sim">
+                  <label class="form-check-label" for="psoriase">Psoríase</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="tungiase" value="Sim">
+                  <label class="form-check-label" for="tungiase">Tungíase</label>
+		            </div>
+		            <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="fissuras" value="Sim">
+                  <label class="form-check-label" for="fissuras">Fissuras</label>
+		            </div>
           </div>
           <div class="form-group mb-3">
             <label>Perfusão PD:</label>
-            <label>
-              <input type="radio" name="perfusao_pe_direito" value="Normal"> Normal
-            </label>
-            <label>
-              <input type="radio" name="perfusao_pe_direito" value="Pálido"> Pálido
-            </label>
-            <label>
-              <input type="radio" name="perfusao_pe_direito" value="Cianótico"> Cianótico
-            </label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="perfusao_pe_direito" id="PDnormal" value="Normal">
+              <label class="form-check-label" for="PDnormal">Normal</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="perfusao_pe_direito" id="PDpalido" value="Pálido">
+              <label class="form-check-label" for="PDpalido">Pálido</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="perfusao_pe_direito" id="PDcianotico" value="Cianótico">
+              <label class="form-check-label" for="PDcianotico">Cianótico</label>
+            </div>
           </div>
           <div class="form-group mb-3">
             <label>Perfusão PE:</label>
-            <label>
-              <input type="radio" name="perfusao_pe_esquerdo" value="Normal"> Normal
-            </label>
-            <label>
-              <input type="radio" name="perfusao_pe_esquerdo" value="Pálido"> Pálido
-            </label>
-            <label>
-              <input type="radio" name="perfusao_pe_esquerdo" value="Cianótico"> Cianótico
-            </label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="perfusao_pe_esquerdo" id="PEnormal" value="Normal">
+              <label class="form-check-label" for="PEnormal">Normal</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="perfusao_pe_esquerdo" id="PEpalido" value="Pálido">
+              <label class="form-check-label" for="PEpalido">Pálido</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="perfusao_pe_esquerdo" id="PEcianotico" value="Cianótico">
+              <label class="form-check-label" for="PEcianotico">Cianótico</label>
+            </div>
           </div>
+          <label>Alterações na pele:</label>
+          <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="verruga_plantar" value="Sim">
+                  <label class="form-check-label" for="verruga_plantar">Verruga Plantar</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="calo_dorsal" value="Sim">
+                  <label class="form-check-label" for="calo_dorsal">Calo Dorsal</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="calo_plantar" value="Sim">
+                  <label class="form-check-label" for="calo_plantar">Calo Plantar</label>
+                </div>
+		            <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="calo_interdigital" value="Sim">
+                  <label class="form-check-label" for="calo_interdigital">Calo Interdigital</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="hiperqueratose" value="Sim">
+                  <label class="form-check-label" for="hiperqueratose">Hiperqueratose</label>
+                </div>
+                <br>
           <div class="form-group mb-3">
-            <label>
-              <input type="checkbox" name="verruga_plantar" value="Sim"> Verruga Plantar
-            </label>
-            <label>
-              <input type="checkbox" name="calo_dorsal" value="Sim"> Calo Dorsal
-            </label>
-            <label>
-              <input type="checkbox" name="calo_plantar" value="Sim"> Calo Plantar
-            </label>
-            <label>
-              <input type="checkbox" name="hiperqueratose" value="Sim"> Hiperqueratose
-            </label>
-            <label>
-              <input type="checkbox" name="calo_interdigital" value="Sim"> Calo Interdigital
-            </label>
-          </div>
+            <label for="tipo_marcha" class="form-label">Já teve ou apresenta Erisipela?</label>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="erisipela" id="simErisipela" value="Sim">
+              <label class="form-check-label" for="simErisipela">Sim</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="erisipela" id="naoErisipela" value="Não">
+              <label class="form-check-label" for="naoErisipela">Não</label>
+            </div>
+            <br>
           <div class="form-group mb-3">
-            <label>Já teve ou apresenta Erisipela?</label>
-            <label>
-              <input type="radio" name="erisipela" value="Sim"> Sim
-            </label>
-            <label>
-              <input type="radio" name="erisipela" value="Não"> Não
-            </label>
-          </div>
-          <div class="form-group mb-3">
-            <label for="observacoes" class="form-label">Outras alterações na pele:</label>
+            <label for="observacoes" class="form-label">Outras alterações:</label>
             <textarea class="form-control" id="observacoes" placeholder="Informe outras alterações"></textarea>
           </div>
           <div class="d-flex justify-content-between">
-            <button type="button" class="btn btn-secondary" onclick="prevStep(6)">Voltar</button>
-            <!-- Botão "Enviar" como type="button" para não submeter o formulário -->
-            <!-- Foreign keys -->
             <button type="submit" class="btn btn-primary">Enviar</button>
           </div>
       </div>
@@ -806,4 +831,4 @@
     }
   </script>
 
-{{>partials/footer}}
+{{>partials/footer}}  

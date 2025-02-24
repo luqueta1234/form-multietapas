@@ -23,7 +23,6 @@ export interface AlteracoesLesoesInstance extends Model {
     hiperqueratose: "Sim" | "Não"
     calo_interdigital: "Sim" | "Não"
     erisipela: "Sim" | "Não"
-    observacoes: string
   }
   
   // Definição do modelo Sequelize
@@ -106,10 +105,6 @@ export interface AlteracoesLesoesInstance extends Model {
         type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true,
       },
-      observacoes_alteracoes: {
-        type: DataTypes.TEXT,
-        allowNull: true,
-      } 
 },{
       tableName: "alteracoes_lesoes",
       timestamps: false

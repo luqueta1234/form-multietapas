@@ -18,8 +18,6 @@ export interface DadosPessoaisInstance extends Model {
     cep: string
     rg: string
     telefone_residencial: string
-    telefone_celular: string
-    observacoes: string
 }
 
 export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPessoais", {
@@ -81,10 +79,6 @@ export const DadosPessoais = sequelize.define<DadosPessoaisInstance>("DadosPesso
         type: DataTypes.STRING,
         allowNull: true
     },
-    observacoes_pessoais:{
-        type: DataTypes.TEXT,
-        allowNull: true
-    }
 }, {
     timestamps: false,
     tableName: 'dados_pessoais'

@@ -11,9 +11,6 @@ export interface DescricaoPeInstance extends Model {
     id_dados_pessoais: number
     id_formato_unha: number
     id_alteracoes_lesoes: number
-    observacoes_pe: string
-    observacoes_dedos: string
-    lesoes: string
     uso_palmilha: "Sim" | "Não" | "Ortopédica" | "Descanso"
     ncalcado: string
     tipocalcado: string
@@ -70,18 +67,6 @@ export const DescricaoPe = sequelize.define<DescricaoPeInstance>("DescricaoPe",{
         },
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
-    },
-    observacoes_pe:{
-        type: DataTypes.TEXT,
-        allowNull: true
-    },
-    observacoes_dedos:{
-        type: DataTypes.TEXT,
-        allowNull: true
-    },
-    lesoes:{
-        type: DataTypes.TEXT,
-        allowNull: true
     },
     uso_palmilha:{
         type: DataTypes.ENUM("Sim", "Não", "Ortopédica", "Descanso"),

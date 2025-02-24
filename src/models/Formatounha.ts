@@ -15,7 +15,6 @@ export interface FormatoUnhaInstance extends Model {
     torques: "Sim" | "Não"
     normal: "Sim" | "Não"
     cunha: "Sim" | "Não"
-    observacoes: string
 }
 
 export const FormatoUnha = sequelize.define<FormatoUnhaInstance>("FormatoUnha", {
@@ -67,10 +66,6 @@ export const FormatoUnha = sequelize.define<FormatoUnhaInstance>("FormatoUnha", 
         type: DataTypes.ENUM("Sim", "Não"),
         allowNull: true
     },
-    observacoes_unhas:{
-        type: DataTypes.TEXT,
-        allowNull: true
-    }
 },{
     tableName:'formato_unha',
     timestamps: false
